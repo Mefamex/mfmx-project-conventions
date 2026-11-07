@@ -6,15 +6,15 @@
 
 ---
 
-## 📋 Ajan İçin Soru & Karar Kuralları
+## Ajan İçin Soru ve Karar Kuralları
 
 1. **Varsayımla Kodlama Yasaktır:** İki farklı yol varsa ve tercih kritikse tahminle ilerleme; soruyu buraya net seçeneklerle yaz.
-2. **Kendi Kararım (Inisiyatif İlkesi):** Geliştirici otonomi vermişse (*"kararı sen ver ve devam et"*), kararı uygula ancak bu dosyaya `KENDİ KARARIM` başlığı altında **seçimini ve gerekçeni** tablo halinde kaydet.
+2. **Kendi Kararım (Inisiyatif İlkesi):** Geliştirici otonomi vermişse ("kararı sen ver ve devam et"), kararı uygula ancak bu dosyaya Kendi Kararım başlığı altında **seçimini ve gerekçeni** tablo halinde kaydet.
 3. **Arşivleme Kuralı:** Yanıtlanan sorular bu dosyayı şişirmemeli; `docs/archive/YYYY-MM-DD-ask-[konu].md` dosyasına taşınarak temizlenmelidir.
 
 ---
 
-## 🔴 1. Acil Karar Bekleyenler (Bloklayıcılar / Blocking)
+## 1. Acil Karar Bekleyenler (Bloklayıcılar / Blocking)
 *Geliştiriciden yanıt gelmeden koda dokunulmaması gereken açık sorular:*
 
 ### Soru 1: [Konu / Modül Başlığı]
@@ -26,7 +26,7 @@
 
 ---
 
-## 🧠 2. Kendi Kararım (Ajanın Otonom Aldığı Kararlar)
+## 2. Kendi Kararım (Ajanın Otonom Aldığı Kararlar)
 *Geliştirici yokken ajanın inisiyatif alıp uyguladığı, gerekçelendirilmiş tercihler:*
 
 ### [YYYY-MM-DD HH:MM] — [Karar Konusu]
@@ -39,8 +39,8 @@
 
 ---
 
-## ⏸ 3. Ertelenmiş / Kullanımda Görülecekler (Deferred)
+## 3. Ertelenmiş / Kullanımda Görülecekler (Deferred)
 *Şu an koda engel olmayan, canlı kullanım tecrübesine veya ilerleyen fazlara bırakılan konular:*
 
-- **[Konu 1]:** *"Kullanım deneyimine göre bakalım"* — Şimdilik varsayılan davranışta bırakıldı.
-- **[Konu 2]:** İleride gerekirse tek bir `bool` ayarıyla açılmak üzere kapalı tutuldu.
+- **[Konu 1]:** "Kullanım deneyimine göre bakalım" — Şimdilik varsayılan davranışta bırakıldı.
+- **[Konu 2]:** İleride gerekirse tek bir ayarla açılmak üzere kapalı tutuldu.

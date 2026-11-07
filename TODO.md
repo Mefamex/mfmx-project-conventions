@@ -5,17 +5,17 @@
 
 ---
 
-## 📋 Ajan & Geliştirici Kuralları
+## Ajan ve Geliştirici Kuralları
 
 - **Sıralı İlerleme:** Aktif sprint listesini yukarıdan aşağıya takip et; kapsama girmeyen yan işlere dallanma.
-- **Tahmin Yasak:** Varsayımla koda girme; açık kararları `ask.md` veya `NOTES.md`'ye yönlendir.
+- **Tahmin Yasak:** Varsayımla koda girme; açık kararları `ASK.md` veya `NOTES.md`'ye yönlendir.
 - **Kırmızı Çizgiler:** `sudo`, veri silme (`rm`), kontrolsüz refaktör veya `git push` izinsiz çalıştırılamaz.
-- **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`TODO.DONE.md`](./TODO.DONE.md)'nin **en üstüne** eklenir.
+- **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`TODO.DONE.md`](./TODO.DONE.md)'nin en üstüne eklenir.
 - **Doğrulama Şartı:** `build`, `test`, `lint` veya canlı çalışma kanıtı (exit code 0) sunulmadan görev tamamlanamaz.
 
 ---
 
-## 🚀 1. Aktif Sprint (Active Sprint)
+## 1. Aktif Sprint (Active Sprint)
 *Şu anda üzerinde çalışılan / ilk ele alınacak acil görevler:*
 
 - [ ] **1. [Görev Başlığı]:**
@@ -29,7 +29,7 @@
 
 ---
 
-## 📌 2. Yüksek Öncelik (High Priority)
+## 2. Yüksek Öncelik (High Priority)
 *Aktif sprint biter bitmez sırada bekleyen kritik maddeler:*
 
 - [ ] **[Kritik Özellik / Düzeltme]:** Açıklama ve ilgili dosya yolları.
@@ -37,7 +37,7 @@
 
 ---
 
-## 🛠️ 3. Backlog (Medium & Low Priority)
+## 3. Backlog (Medium & Low Priority)
 *Sistemi tamamlayıcı, aciliyeti olmayan geliştirmeler:*
 
 - [ ] **[Özellik Başlığı]:** Detaylar.
@@ -45,7 +45,7 @@
 
 ---
 
-## 🔮 4. Gelecek Yol Haritası (Future Roadmap)
+## 4. Gelecek Yol Haritası (Future Roadmap)
 *İleride değerlendirilecek fikir ve genişletmeler:*
 
 - [ ] **[Entegrasyon / İleri Fikir 1]:** İhtiyaç halinde eklenecek harici servis veya araçlar.
@@ -53,7 +53,7 @@
 
 ---
 
-## ❌ 5. İptal / Kapsam Dışı (Rejected)
+## 5. İptal / Kapsam Dışı (Rejected)
 *Tartışılmış ancak sadelik, maliyet veya mimari tercih gereği vazgeçilmiş kararlar (tekrar gündeme gelmemesi için gerekçesiyle tutulur):*
 
 - ~~**[Vazgeçilen Özellik Adı]:**~~ [İptal gerekçesi — örn: Performans yükü getirdiği veya arayüzü kalabalıklaştırdığı için iptal edildi].

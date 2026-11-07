@@ -1,12 +1,12 @@
 # =============================================================================
 # [Proje Adı] — Yapılandırma Dosyası (config.yaml)
 #
-# 🧭 YAPILANDIRMA FELSEFESİ VE ÖNCELİK SIRASI:
+# YAPILANDIRMA FELSEFESİ VE ÖNCELİK SIRASI:
 # 1. Ortam Değişkenleri (ENV)    -> [EN YÜKSEK] Çalışma anında verilenler (Örn: APP_AYAR=deger)
 # 2. Bu Dosyadaki Değerler       -> [ORTA] Projeye özel çalışma ayarları
 # 3. Kod İçi Dahili Varsayılan   -> [EN DÜŞÜK] Dosya silinse bile çökmeyi önleyen emniyet değerleri
 #
-# 🤖 GELİŞTİRİCİ VE AI AJANLARI İÇİN KURALLAR:
+# GELİŞTİRİCİ VE AI AJANLARI İÇİN KURALLAR:
 # - GİZLİLİK YASAĞI: API anahtarları, şifreler veya gizli tokenlar ASLA buraya yazılmaz;
 #   doğrudan ortam değişkeninden (ENV) veya .env dosyasından okunmalıdır.
 # - BİRİM STANDARDI: Süre ve boyut belirten alanlarda birim mutlaka ada eklenmelidir
@@ -26,7 +26,7 @@ system:
   # Ortam değişkeni: APP_TIMEOUT_SEC
   timeout_sec: 10
 
-# --- 2. GÜNLÜK & LOGLAMA ---
+# --- 2. GÜNLÜK VE LOGLAMA ---
 logging:
   # Detay seviyesi: DEBUG, INFO, WARN, ERROR
   # Ortam değişkeni: APP_LOG_LEVEL

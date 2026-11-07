@@ -4,7 +4,7 @@
 # Kendi kendini belgeleyen (Self-documenting) görev yöneticisi.
 # Terminalde sadece 'make' yazıldığında kullanılabilir komutları renkli listeler.
 #
-# ⚠️ ZORUNLU YAŞAM DÖNGÜSÜ HEDEFLERİ:
+# ZORUNLU YAŞAM DÖNGÜSÜ HEDEFLERİ:
 # Her projenin Makefile'ında şu 6 hedef KESİNLİKLE bulunmalıdır:
 # [install, reinstall, update, run, clean, remove]
 # =============================================================================
@@ -19,7 +19,7 @@ help: ## Mevcut komutları ve açıklamalarını listeler
 	@LC_ALL=C grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
 
-# --- 1. KURULUM & YAŞAM DÖNGÜSÜ (Zorunlu Hedefler) ---
+# --- 1. KURULUM VE YAŞAM DÖNGÜSÜ (Zorunlu Hedefler) ---
 
 install: ## Bağımlılıkları ilk kez kurar (pnpm install / uv sync / go mod download)
 	@echo "==> Bağımlılıklar yükleniyor..."
@@ -37,7 +37,7 @@ remove: ## Kurulu bağımlılıkları, sanal ortamı ve çıktıları tamamen ka
 	rm -rf node_modules .venv venv dist build
 	@echo "Kaldırma işlemi tamamlandı."
 
-# --- 2. ÇALIŞTIRMA & GELİŞTİRME ---
+# --- 2. ÇALIŞTIRMA VE GELİŞTİRME ---
 
 run: ## Uygulamayı / ana betiği doğrudan çalıştırır
 	@echo "==> Program çalıştırılıyor..."
@@ -47,7 +47,7 @@ dev: ## Yerel geliştirme ortamını / sunucuyu izleme modunda başlatır
 	@echo "==> Geliştirme modu başlatılıyor..."
 	# [Geliştirme sunucusu komutunu buraya yazın]
 
-# --- 3. DENETİM & DOĞRULAMA ---
+# --- 3. DENETİM VE DOĞRULAMA ---
 
 lint: ## Kod stili, sözdizimi ve tip denetimlerini çalıştırır
 	@echo "==> Statik kod analizi yapılıyor..."
@@ -60,7 +60,7 @@ test: ## Birim ve entegrasyon testlerini koşturur
 verify: lint test ## Commit/Push öncesi tam doğrulama zincirini çalıştırır (lint + test)
 	@echo "==> Tüm kontroller başarıyla tamamlandı (ALL_OK)."
 
-# --- 4. DERLEME & TEMİZLİK ---
+# --- 4. DERLEME VE TEMİZLİK ---
 
 build: ## Üretim derlemesini alır (dist / build / binary)
 	@echo "==> Üretim derlemesi alınıyor..."
@@ -73,7 +73,7 @@ clean: ## Geçici dosyaları, derleme çıktılarını ve önbellekleri temizler
 	@echo "Temizlik tamamlandı."
 
 # =============================================================================
-# 🧭 NE ZAMAN HANGİ KOMUT? (Ajan & Geliştirici Kılavuzu)
+# NE ZAMAN HANGİ KOMUT? (Ajan ve Geliştirici Kılavuzu)
 #
 # 1. Projeyi taze klonlayınca  : make install
 # 2. Çalıştırmak için          : make run (veya geliştirme için: make dev)
