@@ -1,63 +1,59 @@
-# TODO — [Proje Adı Buraya Gelecek]
+# TODO — [Proje Adı]
 
 > **Bağlam ve Amaç (Context Anchor):**
-> [Bu projenin temel amacı, hedeflediği nihai çıktı ve mevcut odak noktası nedir? Buraya 2-4 cümlelik net ve somut bir özet yazın. Ajan veya geliştirici yeni oturuma başladığında projeyi buradan anlar.]
+> [Projenin çekirdek amacı, nihai çıktısı ve anlık odak noktası (2-3 net cümle). Ajan her oturumda ilk burayı okur.]
 
 ---
 
-## 📋 Ajan ve Geliştirici İçin Çalışma Kuralları
+## 📋 Ajan & Geliştirici Kuralları
 
-1. **Sırayla İlerle:** Aktif geliştirme sırasındaki işleri yukarıdan aşağıya doğru ele al. Kapsamı aşan veya listede olmayan işlere sormadan dallanma.
-2. **Tahmin Etme, Doğrula:** Kodda varsayımla ilerleme; gerekirse soru sor veya açık soruları `ask.md` / `NOTES.md` içine not düş.
-3. **Kritik Kapılarda Dur:** `sudo`, veri silme (`rm`), mimari kırılma riski taşıyan adımlar veya `git push` izinsiz çalıştırılamaz.
-4. **TODO'dan DONE'a Aktarma Kuralı:**
-   - Bir görev tamamlandığında, `TODO.md` listesinden silinir veya `[x]` olarak işaretlenir.
-   - Detaylı teknik açıklaması ve doğrulama kanıtıyla birlikte [`TODO.DONE.md`](./TODO.DONE.md) dosyasının **en üstüne (ters kronolojik)** aktarılır.
-5. **Fiilî Test Kanıtı:** Çalıştığını test komutuyla (`pytest`, `pnpm build`, `cargo test`, canlı curl/log) kanıtlamadığın hiçbir işi tamamlandı sayma.
+- **Sıralı İlerleme:** Aktif sprint listesini yukarıdan aşağıya takip et; kapsama girmeyen yan işlere dallanma.
+- **Tahmin Yasak:** Varsayımla koda girme; açık kararları `ask.md` veya `NOTES.md`'ye yönlendir.
+- **Kırmızı Çizgiler:** `sudo`, veri silme (`rm`), kontrolsüz refaktör veya `git push` izinsiz çalıştırılamaz.
+- **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`TODO.DONE.md`](./TODO.DONE.md)'nin **en üstüne** eklenir.
+- **Doğrulama Şartı:** `build`, `test`, `lint` veya canlı çalışma kanıtı (exit code 0) sunulmadan görev tamamlanamaz.
 
 ---
 
-## 🚀 1. Aktif Geliştirme Sırası (Active Sprint)
-*Şu anda üzerinde çalışılan veya bir sonraki ilk adımda ele alınacak acil görevler:*
+## 🚀 1. Aktif Sprint (Active Sprint)
+*Şu anda üzerinde çalışılan / ilk ele alınacak acil görevler:*
 
 - [ ] **1. [Görev Başlığı]:**
-  - [ ] Alt adım veya teknik gereksinim 1
-  - [ ] Alt adım veya teknik gereksinim 2
-  - Beklenen çıktı / başarı kriteri: `...`
+  - [ ] Alt adım / teknik gereksinim 1
+  - [ ] Alt adım / teknik gereksinim 2
+  - Hedef çıktı / kriter: `...`
 
 - [ ] **2. [Görev Başlığı]:**
-  - [ ] Alt adım veya teknik gereksinim 1
-  - Beklenen çıktı / başarı kriteri: `...`
+  - [ ] Alt adım / teknik gereksinim
+  - Hedef çıktı / kriter: `...`
 
 ---
 
-## 📌 2. Yüksek Öncelikli İşler (High Priority)
-*Aktif sprint sonrasında ele alınması gereken kritik maddeler:*
+## 📌 2. Yüksek Öncelik (High Priority)
+*Aktif sprint biter bitmez sırada bekleyen kritik maddeler:*
 
-- [ ] **[Kritik Özellik / Düzeltme]:**
-  - Açıklama ve detaylar.
-- [ ] **[Performans veya Mimari İyileştirme]:**
-  - İlgili dosyalar ve yapılması gerekenler.
+- [ ] **[Kritik Özellik / Düzeltme]:** Açıklama ve ilgili dosya yolları.
+- [ ] **[Mimari / Performans]:** Çözülmesi gereken darboğaz.
 
 ---
 
-## 🛠️ 3. Orta & Düşük Öncelik (Backlog)
-*Sistemi zenginleştirecek ancak aciliyeti olmayan geliştirmeler:*
+## 🛠️ 3. Backlog (Medium & Low Priority)
+*Sistemi tamamlayıcı, aciliyeti olmayan geliştirmeler:*
 
-- [ ] **[Özellik Başlığı]:** Detaylı açıklama.
-- [ ] **[Refaktör / Dokümantasyon]:** Kod içi temizlik veya ek rehber hazırlığı.
+- [ ] **[Özellik Başlığı]:** Detaylar.
+- [ ] **[Refaktör / Dokümantasyon]:** Kod temizliği veya rehber güncellemeleri.
 
 ---
 
 ## 🔮 4. Gelecek Yol Haritası (Future Roadmap)
-*İlerleyen sürümlerde değerlendirilmek üzere kenara not edilen fikirler:*
+*İleride değerlendirilecek fikir ve genişletmeler:*
 
-- [ ] **[Gelecek Fikri 1]:** İleride entegre edilebilecek harici servisler veya ek modüller.
-- [ ] **[Gelecek Fikri 2]:** İhtiyaç duyulursa ele alınacak genişletmeler.
+- [ ] **[Entegrasyon / İleri Fikir 1]:** İhtiyaç halinde eklenecek harici servis veya araçlar.
+- [ ] **[Gelişmiş Özellik 2]:** Uzun vadeli mimari fikirler.
 
 ---
 
-## ❌ 5. İptal Edilenler / Kapsam Dışı (Rejected)
-*Tartışılmış ancak projenin sadeliği veya mimari tercihler gereği vazgeçilmiş kararlar (aynı şeyi tekrar tartışmamak için tutulur):*
+## ❌ 5. İptal / Kapsam Dışı (Rejected)
+*Tartışılmış ancak sadelik, maliyet veya mimari tercih gereği vazgeçilmiş kararlar (tekrar gündeme gelmemesi için gerekçesiyle tutulur):*
 
-- ~~**[Vazgeçilen Özellik Adı]:**~~ İptal gerekçesi (Örn: Arayüzü gereksiz karmaşıklaştırdığı veya harici kütüphane bağımlılığı yarattığı için iptal edildi).
+- ~~**[Vazgeçilen Özellik Adı]:**~~ [İptal gerekçesi — örn: Performans yükü getirdiği veya arayüzü kalabalıklaştırdığı için iptal edildi].
