@@ -20,6 +20,7 @@
 | [`TODO.md`](./TODO.md) | Aktif Sprint & Backlog | En başta *Bağlam Çapası (Context Anchor)* zorunlu. Bitince `TODO.DONE.md`'ye taşınır. |
 | [`TODO.DONE.md`](./TODO.DONE.md) | Doğrulanmış İş Arşivi | **Ters kronolojik** (en yeni en üstte). **Doğrulama komutu/çıktısı** zorunlu. |
 | [`ASK.md`](./ASK.md) | Soru & Karar Kuyruğu | **"Tahminle koda girilmez."** Açık kararlar, otonom tercihler (`KENDİ KARARIM`) ve arşivleme. |
+| [`NOTES.md`](./NOTES.md) | Dahili Teknik Bellek | Mimari kararlar, denenip elenen alternatifler, sistem limitleri ve kazanılan dersler. |
 | [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) | Git & Commit Kuralları | Conventional Commits (`:`), atomik commitler, pre-push secret taraması. **Push izne tabidir.** |
 | [`README.md`](./README.md) | Proje Vitrini & Mimari | Mimari özet, kurulum adımları ve operasyonel komutlar. |
 
@@ -39,8 +40,9 @@
 1. Bu repodaki şablon dosyalarını projenizin kök dizinine kopyalayın.
 2. `TODO.md` başındaki **Bağlam ve Amaç** kısmını projenize göre doldurun; görevleri sıralayın.
 3. Mimari bir ikilem veya karar gerektiğinde `ASK.md` dosyasına seçenekleriyle yazın.
-4. Tamamlanan görevi `TODO.md`'den `TODO.DONE.md`'nin **en üstüne** zaman damgası ve test çıktısıyla aktarın.
-5. `GIT_STANDARDS.md` kurallarıyla atomik commit atın; **kullanıcı onayı olmadan push çalıştırmayın**.
+4. Karar gerekçelerini, elenen yöntemleri ve sistem sınırlarını `NOTES.md` dosyasına kaydedin.
+5. Tamamlanan görevi `TODO.md`'den `TODO.DONE.md`'nin **en üstüne** zaman damgası ve test çıktısıyla aktarın.
+6. `GIT_STANDARDS.md` kurallarıyla atomik commit atın; **kullanıcı onayı olmadan push çalıştırmayın**.
 
 ---
 
