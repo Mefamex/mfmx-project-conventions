@@ -1,0 +1,37 @@
+# =============================================================================
+# [Proje Adı] — Yapılandırma Dosyası (config.yaml)
+#
+# 🧭 YAPILANDIRMA FELSEFESİ VE ÖNCELİK SIRASI:
+# 1. Ortam Değişkenleri (ENV)    -> [EN YÜKSEK] Çalışma anında verilenler (Örn: APP_AYAR=deger)
+# 2. Bu Dosyadaki Değerler       -> [ORTA] Projeye özel çalışma ayarları
+# 3. Kod İçi Dahili Varsayılan   -> [EN DÜŞÜK] Dosya silinse bile çökmeyi önleyen emniyet değerleri
+#
+# 🤖 GELİŞTİRİCİ VE AI AJANLARI İÇİN KURALLAR:
+# - GİZLİLİK YASAĞI: API anahtarları, şifreler veya gizli tokenlar ASLA buraya yazılmaz;
+#   doğrudan ortam değişkeninden (ENV) veya .env dosyasından okunmalıdır.
+# - BİRİM STANDARDI: Süre ve boyut belirten alanlarda birim mutlaka ada eklenmelidir
+#   (örn: timeout_sec, delay_ms, max_size_mb, cache_ttl_sec).
+# - GÜVENLİ VARSAYILAN: Proje taze klonlandığında bu dosya düzenlenmeden çalıştırıldığında
+#   sistem güvenli/zararsız varsayılanlarla ayağa kalkmalıdır.
+# - ALAN AÇIKLAMASI: Her ayarın üstünde ne işe yaradığı ve onu ezen ortam değişkeni yazılmalıdır.
+# =============================================================================
+
+# --- 1. SİSTEM AYARLARI ---
+system:
+  # Ayarın açıklaması ve kabul edilen değerler
+  # Ortam değişkeni: APP_PARAMETRE_ADI
+  ayar_adi: "varsayilan_deger"
+
+  # Süre belirten alanlarda birim (_sec, _ms, _min) mutlaka ada eklenir
+  # Ortam değişkeni: APP_TIMEOUT_SEC
+  timeout_sec: 10
+
+# --- 2. GÜNLÜK & LOGLAMA ---
+logging:
+  # Detay seviyesi: DEBUG, INFO, WARN, ERROR
+  # Ortam değişkeni: APP_LOG_LEVEL
+  level: "INFO"
+
+  # Log dosyalarının tutulacağı hedef dizin
+  # Ortam değişkeni: APP_LOG_DIR
+  log_dir: "logs"
