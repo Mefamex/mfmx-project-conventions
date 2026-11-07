@@ -1,0 +1,51 @@
+# =============================================================================
+# [Proje Adı] — Yapılandırma Şablonu (Configuration Template)
+#
+# Öncelik Sırası:
+# 1. Ortam Değişkenleri (Örn: APP_WORKERS=8) -> En yüksek öncelik
+# 2. Bu dosyadaki değerler (config.yaml)
+# 3. Kod içi dahili varsayılanlar (Default)  -> En düşük öncelik
+# =============================================================================
+
+system:
+  # Eşzamanlı iş parçacığı veya worker sayısı
+  # Ortam değişkeni: APP_WORKERS
+  workers: 4
+
+  # İstek başına maksimum zaman aşımı (saniye)
+  # Ortam değişkeni: APP_TIMEOUT
+  timeout_seconds: 5
+
+  # Hata durumunda yeniden deneme sayısı
+  max_retries: 3
+
+logging:
+  # Log seviyesi: DEBUG, INFO, WARN, ERROR
+  # Ortam değişkeni: APP_LOG_LEVEL
+  level: "INFO"
+
+  # Konsol çıktısında renkli format kullanılsın mı?
+  colored_output: true
+
+  # Log dosyalarının tutulacağı dizin (boş bırakılırsa sistem standardı kullanılır)
+  # Ortam değişkeni: APP_LOG_DIR
+  log_dir: "logs"
+
+network:
+  # Saniyede izin verilen maksimum istek (Rate Limiting)
+  # Aşırı yükü ve IP engellenmesini önlemek için koruma eşiği
+  rate_limit_per_second: 50
+
+  # İstekler arası bekleme süresi (milisaniye)
+  delay_between_requests_ms: 20
+
+features:
+  # Otomatik durum kaydı ve devam edebilme (Auto-resume)
+  auto_resume: true
+
+  # Kritik eşiklerde sesli veya görsel bildirim üretilsin mi?
+  alert_notifications: false
+
+  # Deneme modu: Gerçek işlem yapmadan sadece planlanan adımları listeler
+  # Ortam değişkeni: APP_DRY_RUN
+  dry_run: false
