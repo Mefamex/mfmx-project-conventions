@@ -24,6 +24,8 @@
 | [`config.yaml`](./config.yaml) | Yapılandırma Şablonu | Kaskad ayar modeli (ENV > config.yaml > varsayılan). Sıfır gizli anahtar, birimli isimlendirme. |
 | [`Makefile`](./Makefile) | Standart Görev Yöneticisi | Self-documenting help. 6 zorunlu hedef: `install`, `reinstall`, `update`, `run`, `clean`, `remove`. |
 | [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) | Git ve Commit Kuralları | Conventional Commits (`:`), atomik commitler, pre-push secret taraması. Push izne tabidir. |
+| [`pre_commit_checklist.md`](./pre_commit_checklist.md) | Commit Öncesi Kontrol Listesi | Sıfır sızıntı (secrets), kapsam kontrolü, AI ajan tuzakları ve hızlı lint/format onay kapısı. |
+| [`pre_push_checklist.md`](./pre_push_checklist.md) | Push Öncesi Kontrol Listesi | Kullanıcı onayı zorunluluğu, CI eşitliği, tam test/build paketi ve force push emniyeti. |
 | [`README.standarts.md`](./README.standarts.md) | README Standart Kılavuzu | Standart başlık hiyerarşisi, meta tablosu ve içerik kuralları. |
 | [`README.md`](./README.md) | Proje Vitrini ve Mimari | Mimari özet, kurulum adımları ve operasyonel komutlar. |
 
@@ -44,7 +46,7 @@
 Mevcut veya yeni bir projenizde bu standartları tek adımda kurmak için kullandığınız AI ajanına şu komutu verebilirsiniz:
 
 ```text
-https://github.com/Mefamex/mfmx-project-conventions/ reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz ederek oradaki dosya yapısını (TODO.md, TODO.DONE.md, ASK.md, NOTES.md, config.yaml, Makefile) ve standartları (GIT_STANDARDS.md, README.standarts.md) bu projeye uyarla. Eksik dosyaları projemin bağlamına göre oluştur ve bundan sonraki tüm adımlarda bu kurallara bağlı kal.
+https://github.com/Mefamex/mfmx-project-conventions/ reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz ederek oradaki dosya yapısını (TODO.md, TODO.DONE.md, ASK.md, NOTES.md, config.yaml, Makefile) ve standartları (GIT_STANDARDS.md, pre_commit_checklist.md, pre_push_checklist.md, README.standarts.md) bu projeye uyarla. Eksik dosyaları projemin bağlamına göre oluştur ve bundan sonraki tüm adımlarda bu kurallara bağlı kal.
 ```
 
 ---

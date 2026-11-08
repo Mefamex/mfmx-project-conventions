@@ -73,7 +73,11 @@ Standart sözdizimi:
 
 ## 6. Pre-Commit / Pre-Push Hijyeni
 
-Commit veya push öncesi zorunlu 4 filtre:
+Commit veya push öncesinde aşağıdaki detaylı kılavuz ve kontrol listelerinin uygulanması zorunludur:
+- Detaylı commit öncesi adımları için: [`pre_commit_checklist.md`](./pre_commit_checklist.md)
+- Detaylı push öncesi adımları için: [`pre_push_checklist.md`](./pre_push_checklist.md)
+
+Commit veya push öncesi zorunlu 4 ana filtre:
 
 1. **Secret & Key Taraması:** `.env`, API token, bot token veya SSH key depoya ASLA eklenemez.
 2. **Kişisel Veri (PII) Hijyeni:** Telefon, raw kullanıcı ID'si, yerel IP/SSID ve şifreler depodan temizlenmelidir.
