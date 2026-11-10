@@ -1,0 +1,54 @@
+# =============================================================================
+# [Proje Adı] — .gitignore şablonu
+# Projenizde kullanmadığınız yığının bölümünü silebilirsiniz.
+# =============================================================================
+
+# --- 1. Gizli bilgiler ve gerçek yapılandırma (ASLA repoya girmez) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+secrets/
+
+# --- 2. Python (uv / pip) ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# --- 3. Node (pnpm / npm) ---
+node_modules/
+.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+
+# --- 4. Derleme çıktıları ---
+dist/
+build/
+out/
+target/
+
+# --- 5. Loglar ve geçici dosyalar ---
+logs/
+*.log
+*.tmp
+*.swp
+*~
+
+# --- 6. İşletim sistemi ve editör artıkları ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
