@@ -3,6 +3,8 @@
 > **Amaç:** Bu belge; yazılım projelerinde ve açık kaynak depolarda hazırlanan `README.md` dosyalarının değişmez yapısal standartlarını, başlık hiyerarşisini, meta bloğu biçimini ve içerik kurallarını tanımlar.  
 > Bu standartları kullanan herhangi bir geliştirici ya da yapay zekâ ajanı, yeni bir proje oluştururken bu kılavuzu referans almalıdır.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 1. Giriş ve Üst Bilgi Standardı (Header & Metadata Block)
@@ -26,7 +28,10 @@ Projenin hemen başında, aşağıdaki standart Markdown tablosu yer alır:
 | **Stack**    | [Çekirdek Diller ve Kütüphaneler / Örn: Python 3.12, Go 1.22] |
 | **Platform** | [Hedef Ortam / Örn: Linux, Cloudflare Workers, Web]           |
 | **Status**   | Production Ready / Active Development                         |
+| **Template** | [mfmx-project-conventions](https://github.com/Mefamex/mfmx-project-conventions) |
 ```
+
+- **Template** satırı isteğe bağlıdır: proje bu şablon setinden kurulduysa eklenir; şablonun kaynağını README'de görünür tek yerde gösterir.
 
 ### 1.3. Vurucu Açıklama (The Hook / Slogan)
 - Meta tablosunun hemen altında **1-3 cümlelik net bir özet** bulunur.

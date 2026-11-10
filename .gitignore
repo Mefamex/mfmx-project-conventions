@@ -1,6 +1,8 @@
 # =============================================================================
 # [Proje Adı] — .gitignore şablonu
 # Projenizde kullanmadığınız yığının bölümünü silebilirsiniz.
+#
+# Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürüm ve diğer şablonlar orada.
 # =============================================================================
 
 # --- 1. Gizli bilgiler ve gerçek yapılandırma (ASLA repoya girmez) ---

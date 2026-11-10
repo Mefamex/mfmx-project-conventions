@@ -2,6 +2,8 @@
 
 > **Amaç:** Depolarda çalışan geliştiriciler ve AI kodlama ajanları için bağlayıcı Git kurallarıdır. Depoya dokunmadan önce bu kuralların okunması ve uygulanması zorunludur.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 1. Altın Kural: Commit Serbest, Push İzne Tabi (Gatekeeping)

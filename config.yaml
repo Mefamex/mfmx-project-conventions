@@ -17,6 +17,8 @@
 # - ENV ADLANDIRMA: <ÖNEK>_<BÖLÜM>_<ANAHTAR>, tamamı büyük harf.
 #   Örn: system.timeout_sec -> APP_SYSTEM_TIMEOUT_SEC (APP yerine proje önekini kullanın).
 # - ANAHTAR DİLİ: Anahtarlar İngilizce ve snake_case yazılır; açıklamalar Türkçe olabilir.
+#
+# Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürüm ve diğer şablonlar orada.
 # =============================================================================
 
 # --- 1. SİSTEM AYARLARI ---

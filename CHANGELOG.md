@@ -9,6 +9,8 @@
 > 6. **TODO.DONE.md'den Farkı:** [`docs/TODO.DONE.md`](./docs/TODO.DONE.md) mühendislik kaydıdır (iş + kök neden + doğrulama kanıtı). CHANGELOG yalnızca dışarıya yansıyan sonucu özetler; kanıt ve detay için TODO.DONE.md'ye bakılır.  
 > 7. **Yayınlanmamış Değişiklikler (isteğe bağlı):** Sürümlü projelerde en üstte `## Yayınlanmamış` başlığı tutulur; sürüm çıkınca tarih ve sürüm numarasıyla yeniden adlandırılır.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 2026-11-11 | Yeni yerleşim, kalıcı karar kaydı ve STRUCTURE.md
@@ -21,6 +23,7 @@
 - **Commit tipleri :** `add` ve `update` resmi commit tipi oldu.
 - **config.yaml :** ENV adı kuralı `<ÖNEK>_<BÖLÜM>_<ANAHTAR>` olarak sabitlendi.
 - **Yeni dosyalar :** `LICENSE` (MIT), `.gitignore`, `.env.example`, `CHANGELOG.md`.
+- **Şablon kaynağı notu :** Şablon dosyalarına repo linkini veren görünmez bir not eklendi (md dosyalarında giriş bloğundan sonra HTML yorumu, diğerlerinde başlık kutusunun sonunda; dosyanın en başında değil). README meta tablosuna isteğe bağlı **Template** satırı eklendi.
 
 ## 2026-11-09 | Commit ve push kontrol listeleri
 

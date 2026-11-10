@@ -4,6 +4,8 @@
 > Bu kontrol listesi; geliştiricilerin ve yapay zekâ kodlama ajanlarının (Antigravity, Claude Code, Cursor vb.) yerel commitleri uzak depoya (remote) göndermeden önce tamamlaması gereken **nihai doğrulama ve emniyet kapısıdır**.  
 > Uzak depoya gönderilen her hatalı commit; CI/CD kaynaklarını tüketir, bulut faturalarını şişirir ve paylaşılan dallarda çalışan tüm ekibin akışını kesintiye uğratır.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 1. Altın Kural: Kullanıcı Onayı ve Gatekeeping

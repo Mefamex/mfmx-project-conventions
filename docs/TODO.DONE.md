@@ -7,6 +7,8 @@
 > 4. **Zaman Damgası:** `YYYY-MM-DD HH:MM` biçiminde yerel saat kullanılır; farklı saat dilimlerinde çalışılıyorsa ofset eklenir (örn. `2026-11-10 14:30 +03:00`).  
 > 5. **Tek Dosya, Arşiv Yok:** Bu dosya bölünmez ve arşive taşınmaz; projenin "neler yapıldı" haritasıdır. En yeni kayıt en üstte olduğu için uzaması okumayı bozmaz.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ### [YYYY-MM-DD HH:MM] — [Görev başlığı: TODO.md'deki maddenin adıyla aynı]

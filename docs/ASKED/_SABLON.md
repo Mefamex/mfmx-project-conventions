@@ -15,6 +15,8 @@ BU ŞABLON NASIL KULLANILIR:
 Bu yorum bloğunu kopyaladığınız dosyada silebilirsiniz.
 -->
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## Geçmiş (en yeni en üstte)

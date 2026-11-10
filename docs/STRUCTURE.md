@@ -11,6 +11,8 @@
 > 5. **Biçim:** Kutu çizim karakterleri (`├──`) yerine girintili liste (`- klasor/`) kullanılır; girinti 4 boşluktur. Ana dizin için ayrıca `- ./` satırı yazılmaz; kökteki dosya ve klasörler en sol seviyede, aynı girintide durur.  
 > 6. **Güncelleme Tetikleyicisi:** Klasör eklenince, silinince veya adı değişince bu dosya **aynı commit'te** güncellenir.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 1. Klasör Yapısı

@@ -4,6 +4,8 @@
 > Kod dosyaları bir işin **"nasıl"** yapıldığını anlatır; git geçmişi **"ne zaman"** yapıldığını gösterir; `NOTES.md` ise o kodun **"neden"** o şekilde yazıldığını ve **"hangi alternatiflerin neden elendiğini"** açıklar.  
 > Kod içine paragraflarca yorum satırı yığmak yerine, mimarinin görünmeyen kısıtları ve tecrübeleri burada diske sabitlenir.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## Bu Dosyanın Amacı ve Kapsamı

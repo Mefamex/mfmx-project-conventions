@@ -4,6 +4,8 @@
 > Bu kontrol listesi; geliştiricilerin ve yapay zekâ kodlama ajanlarının (Antigravity, Claude Code, Cursor vb.) `git commit` komutunu çalıştırmadan önce geçmesi gereken **en erken ve en ucuz güvenlik kapısıdır (shift-left gate)**.  
 > Bu aşamadaki kontroller hızlı olmalıdır (hedef: < 15 saniye).
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## 1. Sıfır Sızıntı Güvenlik Kapısı (Secret & Credential Gate)

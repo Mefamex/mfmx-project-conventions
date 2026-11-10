@@ -18,6 +18,8 @@
 # 4. "remove" ve "clean" hedefleri rm -rf kullanır. Dizin listesini projenize göre
 #    daraltın; log dizini kanıt içeriyorsa clean'den çıkarın.
 # 5. Tarif satırları TAB ile başlamalıdır (boşluk değil).
+#
+# Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürüm ve diğer şablonlar orada.
 # =============================================================================
 
 .DEFAULT_GOAL := help

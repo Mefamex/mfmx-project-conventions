@@ -4,6 +4,8 @@
 > Bu dosya; mimari kararlar, yetki sınırları veya belirsizlik içeren konularda geliştiricinin yanıtını bekleyen açık soruları toplar.  
 > Cevaplanan sorular konu bazlı karar dosyalarına (`docs/ASKED/<konu>.md`) işlenir ve en alttaki **Karara Bağlananlar** listesine tek satırla eklenir; aksiyon maddeleri [`TODO.md`](./TODO.md) listesine aktarılır.
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## Ajan İçin Soru ve Karar Kuralları

@@ -3,6 +3,8 @@
 > **Bağlam ve Amaç (Context Anchor):**
 > [Projenin çekirdek amacı, nihai çıktısı ve anlık odak noktası (2-3 net cümle). Ajan her oturumda ilk burayı okur.]
 
+<!-- Şablon: https://github.com/Mefamex/mfmx-project-conventions — güncel sürümü ve diğer şablonları orada bulabilirsiniz. -->
+
 ---
 
 ## Ajan ve Geliştirici Kuralları
