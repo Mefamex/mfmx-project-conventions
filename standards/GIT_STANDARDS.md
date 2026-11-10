@@ -98,3 +98,13 @@ Commit veya push öncesi zorunlu 4 ana filtre:
 Geriye dönük uyumsuzluklarda:
 - Başlıkta type/scope sonrasına `!` eklenir: `feat(api)!: change response structure to wrapped data object`
 - Veya commit gövdesinde `BREAKING CHANGE: <açıklama>` başlığı açılarak göç (migration) talimatı verilir.
+
+---
+
+## 8. Sürümleme ve Release (Semantic Versioning)
+
+- **Etiket Biçimi:** `vMAJOR.MINOR.PATCH` (örn. `v1.2.0`), annotated tag olarak atılır: `git tag -a v1.2.0 -m "v1.2.0"`.
+- **Hangi Sayı Artar:** Kırıcı değişiklik (`!` / `BREAKING CHANGE`) → MAJOR; `feat` veya `add` → MINOR; yalnızca `fix` / `update` → PATCH.
+- **CHANGELOG ile Bağ:** Sürüm çıkınca `CHANGELOG.md`'deki ilgili kaydın başlığına sürüm eklenir (`## YYYY-MM-DD | v1.2.0 | başlık`); GitHub release notu bu kaydın maddeleridir.
+- **Ne Zaman Release:** Her commit release değildir. Kullanıcıyı etkileyen bir grup değişiklik tamamlanıp doğrulandığında çıkılır.
+- **İzne Tabi:** Etiket ve release push ile aynı kurala tabidir; açık kullanıcı onayı olmadan yayınlanmaz.

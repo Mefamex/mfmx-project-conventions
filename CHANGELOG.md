@@ -13,7 +13,7 @@
 
 ---
 
-## 2026-11-11 | Yeni yerleşim, kalıcı karar kaydı ve STRUCTURE.md
+## 2026-11-11 | v1.0.0 | Yeni yerleşim, kalıcı karar kaydı ve STRUCTURE.md
 
 - **Yeni yerleşim :** Kural belgeleri `standards/` klasörüne (`GIT_STANDARDS.md`, `PRE_COMMIT_CHECKLIST.md`, `PRE_PUSH_CHECKLIST.md`, `README.STANDARDS.md`), proje hakkındaki kayıtlar `docs/` klasörüne (`STRUCTURE.md`, `TODO.DONE.md`, `ASKED/`) taşındı. Kökte yalnızca günlük çalışma dosyaları kaldı.
 - **Yeniden adlandırıldı :** `pre_commit_checklist.md`, `pre_push_checklist.md`, `README.standarts.md` ve kökteki `TODO.DONE.md` yeni yerlerine taşındı; eski yollara verilen linkler çalışmaz.
@@ -21,6 +21,7 @@
 - **docs/STRUCTURE.md :** Her projede zorunlu klasör ve dosya haritası. README artık yalnızca ana dizini anlatır ve bu dosyaya atıf yapar.
 - **Güvenlik — pre-commit hook :** Türkçe locale'de secret taraması "API" gibi büyük harfli anahtarları kaçırıyordu; düzeltildi. Hook artık yalnızca eklenen satırları tarar.
 - **Commit tipleri :** `add` ve `update` resmi commit tipi oldu.
+- **Sürümleme :** `vMAJOR.MINOR.PATCH` etiketleri ve GitHub release kuralı eklendi (`standards/GIT_STANDARDS.md`, bölüm 8); release notu CHANGELOG kaydından alınır.
 - **config.yaml :** ENV adı kuralı `<ÖNEK>_<BÖLÜM>_<ANAHTAR>` olarak sabitlendi.
 - **Yeni dosyalar :** `LICENSE` (MIT), `.gitignore`, `.env.example`, `CHANGELOG.md`.
 - **Şablon kaynağı notu :** Şablon dosyalarına repo linkini veren görünmez bir not eklendi (md dosyalarında giriş bloğundan sonra HTML yorumu, diğerlerinde başlık kutusunun sonunda; dosyanın en başında değil). README meta tablosuna isteğe bağlı **Template** satırı eklendi.
