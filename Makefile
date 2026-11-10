@@ -7,6 +7,17 @@
 # ZORUNLU YAŞAM DÖNGÜSÜ HEDEFLERİ:
 # Her projenin Makefile'ında şu 6 hedef KESİNLİKLE bulunmalıdır:
 # [install, reinstall, update, run, clean, remove]
+#
+# KOPYALAYANLAR İÇİN NOTLAR:
+# 1. Bu bir şablondur. Hedefler doldurulana kadar yalnızca mesaj basar ve başarılı
+#    (exit 0) döner; boş şablonda "make verify" da "ALL_OK" der. Bu bir KANIT DEĞİLDİR.
+# 2. Her "# [...]" satırını projenizin gerçek komutuyla değiştirin. Tarif içindeki
+#    "#" satırları make tarafından ekrana basılır; doldurduktan sonra silin.
+# 3. Projede karşılığı olmayan hedefi silmeyin; "@echo 'Bu projede yok'" bırakın ki
+#    6 zorunlu hedef her projede aynı kalsın.
+# 4. "remove" ve "clean" hedefleri rm -rf kullanır. Dizin listesini projenize göre
+#    daraltın; log dizini kanıt içeriyorsa clean'den çıkarın.
+# 5. Tarif satırları TAB ile başlamalıdır (boşluk değil).
 # =============================================================================
 
 .DEFAULT_GOAL := help

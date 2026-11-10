@@ -10,7 +10,7 @@
 *Yapay zekâ ajanları ve otonom süreçler için değişmez güvenlik kuralıdır:*
 
 - [ ] **Kullanıcı Onayı Alındı:** **Hiçbir AI ajanı açık kullanıcı onayı almadan `git push` çalıştıramaz.** Kullanıcıya yapılacak push'un kapsamı ve dal adı bildirilip açık onay ("Push edebilirsin") istendi.
-- [ ] **Korumalı Dal Kontrolü:** Doğrudan `main`, `master`, `production` veya `release/*` dallarına push yapılmıyor. Değişiklikler bir özellik dalı (feature branch) üzerinden PR / MR ile birleştirilecek.
+- [ ] **Hedef Dal Bildirildi:** Push edilecek dal (`main` dahil) kullanıcıya açıkça söylendi. Ekip projelerinde korumalı dallara (`main`, `production`, `release/*`) doğrudan push yerine özellik dalı + PR / MR kullanılır; tek kişilik projelerde onaylı `main` push serbesttir.
 
 ---
 
@@ -54,13 +54,14 @@
 *Proje, [MFMX Project Conventions](https://github.com/Mefamex/mfmx-project-conventions) deposunda tanımlanan tüm mimari kurallara ve dosya standartlarına tam uyum sağlamalıdır:*
 
 - [ ] **Merkezi Standart Deposu Denetlendi:** [https://github.com/Mefamex/mfmx-project-conventions](https://github.com/Mefamex/mfmx-project-conventions) deposundaki tüm çekirdek dosya kuralları incelendi; projenin bu kuralların hiçbirini ihlal etmediği teyit edildi.
-- [ ] **TODO & DONE Çapası:** [`TODO.md`](./TODO.md) başındaki Context Anchor (Bağlam Çapası) güncel; tamamlanan görevler doğrulama komutu/test kanıtı (exit code 0) ile [`TODO.DONE.md`](./TODO.DONE.md)'ye ters kronolojik olarak aktarıldı.
-- [ ] **Mühendislik Belleği (`NOTES.md`):** Karşılaşılan kritik platform tuzakları, ölçülmüş sistem limitleri veya elenen alternatifler [`NOTES.md`](./NOTES.md) içine diske sabitlendi.
-- [ ] **Soru ve Karar Kuyruğu (`ASK.md`):** Açık mimari ikilemler veya ajanın otonom aldığı tercihler (`Kendi Kararım`) [`ASK.md`](./ASK.md) dosyasına gerekçeleriyle kaydedildi; tahminle koda girilmedi.
+- [ ] **TODO & DONE Çapası:** [`TODO.md`](../TODO.md) başındaki Context Anchor (Bağlam Çapası) güncel; tamamlanan görevler doğrulama komutu/test kanıtı (exit code 0) ile [`docs/TODO.DONE.md`](../docs/TODO.DONE.md)'ye ters kronolojik olarak aktarıldı.
+- [ ] **Mühendislik Belleği (`NOTES.md`):** Karşılaşılan kritik platform tuzakları, ölçülmüş sistem limitleri veya elenen alternatifler [`NOTES.md`](../NOTES.md) içine diske sabitlendi.
+- [ ] **Soru ve Karar Kuyruğu (`ASK.md`):** Açık mimari ikilemler veya ajanın otonom aldığı tercihler (`Kendi Kararım`) [`ASK.md`](../ASK.md) dosyasına gerekçeleriyle kaydedildi; tahminle koda girilmedi. Cevaplanan sorular `docs/ASKED/<konu>.md` dosyasına işlendi, Karara Bağlananlar listesi güncel ve cevaplananlar `ASK.md`'den kaldırıldı.
 - [ ] **Kaskad Yapılandırma (`config.yaml`):** Sıfır gizli anahtar (secret/token) kuralına uyuldu; birimli isimlendirme (`timeout_sec` vb.) ve ENV > config.yaml > varsayılan hiyerarşisi korundu.
 - [ ] **Standart Makefile:** 6 zorunlu yaşam döngüsü hedefi (`install`, `reinstall`, `update`, `run`, `clean`, `remove`) tanımlı ve tek başına `make` yazıldığında yardım menüsü dökülüyor.
-- [ ] **Git & README Standartları:** [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) (Conventional Commits, atomik commit) ve [`README.standarts.md`](./README.standarts.md) (meta tablosu, başlık sırası) kurallarına eksiksiz uyuldu.
-- [ ] **Dokümantasyon Güncelliği:** Eklenen yeni parametreler, API rotaları veya ortam değişkenleri [`README.md`](./README.md) içine yansıtıldı.
+- [ ] **Git & README Standartları:** [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) (Conventional Commits, atomik commit) ve [`README.STANDARDS.md`](./README.STANDARDS.md) (meta tablosu, başlık sırası) kurallarına eksiksiz uyuldu.
+- [ ] **Yapı Haritası (`docs/STRUCTURE.md`):** Klasör eklendiyse, silindiyse veya adı değiştiyse [`docs/STRUCTURE.md`](../docs/STRUCTURE.md) aynı commit'te güncellendi; README'deki Proje Yapısı (Ana Dizin) bölümü kökteki değişikliği yansıtıyor.
+- [ ] **Dokümantasyon Güncelliği:** Eklenen yeni parametreler, API rotaları veya ortam değişkenleri [`README.md`](../README.md) içine yansıtıldı; kullanıcıyı etkileyen değişiklikler [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne özetlendi.
 
 ---
 
@@ -73,33 +74,41 @@ Push komutunu vermeden önce terminalinizde sırayla şu adımları izleyin:
 git status
 
 # 2. Gönderilecek commit listesini ve değişen dosyaları görün
-git log origin/$(git branch --show-current)..HEAD --stat
+git log @{upstream}..HEAD --stat    # upstream yoksa: git log --oneline -n 10
 
 # 3. Derin doğrulama ve test paketini yerelde çalıştırın
 make verify    # veya make test && make build
 
 # 4. KULLANICI ONAYI ALINDIKTAN SONRA güvenli push çalıştırın
-git push origin feature/yeni-ozellik
+git push origin $(git branch --show-current)
 ```
 
 ---
 
 ## 8. Örnek Git Pre-Push Kancası (.git/hooks/pre-push)
 
-Bu emniyet ağını yerel Git ortamınıza bağlamak için `.git/hooks/pre-push` dosyası oluşturup çalıştırılabilir yapabilirsiniz (`chmod +x .git/hooks/pre-push`):
+Bu emniyet ağını yerel Git ortamınıza bağlamak için `.git/hooks/pre-push` dosyası oluşturup çalıştırılabilir yapabilirsiniz (`chmod +x .git/hooks/pre-push`).  
+Kanca, push edilen hedef dalları Git'in stdin'den verdiği listeden okur (`git push origin HEAD:main` gibi dolaylı push'lar da yakalanır). Korumalı dal listesi varsayılan olarak **boştur**; ekip projelerinde `PROTECTED_BRANCHES` değişkeniyle açılır.
 
 ```bash
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-current_branch=$(git branch --show-current)
+# Ekip projelerinde doğrudan push'a kapalı dallar (boşluklu liste). Tek kişilik projede boş bırakın.
+# Örnek: export PROTECTED_BRANCHES="main master production"
+PROTECTED_BRANCHES="${PROTECTED_BRANCHES:-}"
 
-# 1. Korumalı dallara doğrudan push engeli
-if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ] || [ "$current_branch" = "production" ]; then
-    echo "HATA: Korumalı '$current_branch' dalına doğrudan push yapamazsınız!"
-    echo "Lütfen bir özellik dalı açıp Pull Request (PR) kullanın."
-    exit 1
-fi
+# 1. Korumalı dallara doğrudan push engeli (Git her hedef ref için bir satır gönderir)
+while read -r local_ref local_sha remote_ref remote_sha; do
+    target="${remote_ref#refs/heads/}"
+    for protected in $PROTECTED_BRANCHES; do
+        if [ "$target" = "$protected" ]; then
+            echo "HATA: Korumalı '$target' dalına doğrudan push yapılamaz."
+            echo "Bir özellik dalı açıp Pull Request (PR) kullanın."
+            exit 1
+        fi
+    done
+done
 
 echo "==> [Pre-Push] Derin doğrulama ve testler çalıştırılıyor..."
 
@@ -110,5 +119,5 @@ elif [ -f Makefile ] && grep -q "^test:" Makefile; then
     make test
 fi
 
-echo "==> [Pre-Push] Tüm kontroller başarıyla tamamlandı. Push izni verildi."
+echo "==> [Pre-Push] Tüm kontroller başarıyla tamamlandı."
 ```

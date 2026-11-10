@@ -14,6 +14,14 @@
 
 ---
 
+## ASK / docs/ASKED ile Sınır
+
+- **Kararı geliştirici verdiyse** (bir soruya cevap, onaylanan Kendi Kararım): kayıt `docs/ASKED/<konu>.md` dosyasına gider, buraya kopyalanmaz.
+- **Bilgiyi sistem öğrettiyse** (ölçülen sınır, elenen yol, platform tuzağı): buraya yazılır.
+- İkisi aynı konuya değiyorsa kopyalamak yerine birbirine link verilir; iki kopya zamanla birbirinden kopar.
+
+---
+
 ## Bu Dosya Ne Zaman Güncellenir? (Tetikleyici Olaylar)
 
 Yapay zekâ ajanları ve yazılımcılar aşağıdaki durumlar gerçekleştiğinde bu dosyayı güncellemekle yükümlüdür:

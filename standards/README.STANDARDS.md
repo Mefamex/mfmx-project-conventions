@@ -43,15 +43,17 @@ Projelerde `README.md` içeriği şu standart başlık akışını izler:
 ├── [Meta Tablosu]
 ├── [Vurucu Giriş / Slogan]
 ├── 1. Mimari ve Görsel Önizleme (Architecture & Preview)
-├── 2. Belge Haritası (Repository Doc Map)
-├── 3. Temel Yetenekler ve Özellikler (Key Features)
-├── 4. Teknoloji Yığını ve Gereksinimler (Tech Stack & Prerequisites)
-├── 5. Kurulum ve Hızlı Başlangıç (Installation & Quick Start)
-├── 6. Yapılandırma (Configuration Guide)
-├── 7. Kullanım ve Komutlar (Usage & CLI Reference)
-├── 8. Güvenlik, Gizlilik ve Kırmızı Çizgiler (Safety & Privacy)
+├── 2. Temel Yetenekler ve Özellikler (Key Features)
+├── 3. Teknoloji Yığını ve Gereksinimler (Tech Stack & Prerequisites)
+├── 4. Kurulum ve Hızlı Başlangıç (Installation & Quick Start)
+├── 5. Yapılandırma (Configuration Guide)
+├── 6. Kullanım ve Komutlar (Usage & CLI Reference)
+├── 7. Güvenlik, Gizlilik ve Kırmızı Çizgiler (Safety & Privacy)
+├── 8. Proje Yapısı — Ana Dizin (Project Layout)
 └── 9. Lisans ve Katkı (License)
 ```
+
+Sıralama mantığı: Herkesin okuması gerekenler (ne olduğu, kurulum, kullanım, güvenlik) üstte; yalnızca projeyi geliştirecek kişiyi ilgilendiren yapı bilgisi sonda.
 
 ---
 
@@ -66,47 +68,53 @@ Metin kalabalığı yerine sistemin zihinsel haritası çizilir:
 - **Arayüz Önizlemesi:** Web veya arayüz projelerinde ortalanmış bir ekran görüntüsü (`assets/preview.png`) yer alır.
 - **Kritik Mimari Metrikleri:** Varsa bellek tüketimi, tepki süresi veya soğuk başlangıç gibi somut ölçüm değerleri belirtilir.
 
-### 3.2. Belge Haritası (Repository Doc Map)
-Projeye giren kişinin hangi dosyada neyi bulacağını gösteren rehber tablodur:
-
-```markdown
-| Belge | Amacı ve Sorumluluğu |
-| :--- | :--- |
-| `README.md` | Proje vitrini, genel mimari ve kullanım kılavuzu |
-| `TODO.md` | Aktif sprint, yapılacak işler ve backlog |
-| `TODO.DONE.md` | Doğrulanmış iş arşivi (ters kronolojik) |
-| `ASK.md` | Karar bekleyen açık sorular ve Kendi Kararım kayıtları |
-| `NOTES.md` | Dahili teknik bellek, elenen yöntemler ve sistem limitleri |
-| `config.yaml` | Kaskad yapılandırma ayarları |
-| `Makefile` | Tek komutla yaşam döngüsü yönetimi |
-```
-
-### 3.3. Temel Yetenekler ve Özellikler (Key Features)
+### 3.2. Temel Yetenekler ve Özellikler (Key Features)
 - Maddeler halinde listelenir.
 - Format kuralı: `* **Kalın Özellik Başlığı:** Özelliğin somut açıklaması ve getirdiği teknik avantaj.`
 - Soyut vaatler yerine somut yetenekler yazılır.
 
-### 3.4. Teknoloji Yığını ve Gereksinimler (Tech Stack & Prerequisites)
+### 3.3. Teknoloji Yığını ve Gereksinimler (Tech Stack & Prerequisites)
 - Çatı (Framework), paket yöneticisi, dil sürümleri.
 - Varsa özel donanım veya işletim sistemi gereksinimleri.
 
-### 3.5. Kurulum ve Hızlı Başlangıç (Installation & Quick Start)
+### 3.4. Kurulum ve Hızlı Başlangıç (Installation & Quick Start)
 - Kod blokları içinde numaralı ve adım adım terminal komutları:
   1. Klonlama ve dizine girme
   2. Bağımlılık kurulumu (`make install` veya ilgili paket yöneticisi)
   3. Çalıştırma (`make run` veya `make dev`)
 
-### 3.6. Yapılandırma (Configuration Guide)
+### 3.5. Yapılandırma (Configuration Guide)
 - `config.yaml` dosyasının nasıl kullanılacağı.
 - Öncelik kuralının hatırlatılması: `Ortam Değişkeni (ENV) > config.yaml > Varsayılan`.
 - Hassas anahtarların asla buraya yazılmayacağı, ortam değişkeni üzerinden besleneceği uyarısı.
 
-### 3.7. Kullanım ve Komutlar (Usage & CLI Reference)
+### 3.6. Kullanım ve Komutlar (Usage & CLI Reference)
 - Varsa CLI bayrakları (`--dry-run`, `--status`, `--list`).
 - `Makefile` üzerinden çalıştırılabilecek temel komutların listesi.
 
-### 3.8. Güvenlik, Gizlilik ve Kırmızı Çizgiler (Safety & Privacy)
+### 3.7. Güvenlik, Gizlilik ve Kırmızı Çizgiler (Safety & Privacy)
 - Projenin kritik güvenlik kuralları (örn: yetkisiz işlem yapmama, gizli anahtar sızdırmama, yerel verileri dışarı aktarmama).
+
+### 3.8. Proje Yapısı — Ana Dizin (Project Layout)
+Yalnızca **ana dizindeki** dosya ve klasörler tanımlanır; alt klasörlerin haritası `docs/STRUCTURE.md`'dedir (her projede zorunlu).
+- Bölüm, `docs/STRUCTURE.md`'ye atıf veren tek cümleyle başlar.
+- Her öğe **link verilerek** madde halinde yazılır: ``- [`dosya`](./dosya) — tek cümle görevi.``
+- Klasör maddesi tek cümleyle klasörün işini anlatır; içindeki önemli belge veya yollar altına **girintili ve linkli alt maddeler** olarak yazılır (her biri tek cümle).
+- Kod bloğu veya ağaç çizimi kullanılmaz; ağaç `docs/STRUCTURE.md`'nin işidir.
+
+```markdown
+## 8. Proje Yapısı (Ana Dizin)
+
+Tüm klasörlerin ve önemli dosyaların haritası için: [`docs/STRUCTURE.md`](./docs/STRUCTURE.md).
+
+- [`TODO.md`](./TODO.md) — [Dosyanın işi, tek cümle.]
+- [`src/`](./src/) — [Klasörün işi, tek cümle.]
+    - [`main.py`](./src/main.py) — [Bu dosyanın işi, tek cümle.]
+- [`docs/`](./docs/) — Proje hakkında: projenin yapısı, yapılan işler ve verilen kararlar.
+    - [`STRUCTURE.md`](./docs/STRUCTURE.md) — Tüm klasörlerin ve önemli dosyaların haritası.
+    - [`TODO.DONE.md`](./docs/TODO.DONE.md) — Yapılan işlerin kanıtlı haritası.
+    - [`ASKED/`](./docs/ASKED/) — Cevaplanmış soruların kalıcı karar kayıtları.
+```
 
 ### 3.9. Lisans (License)
 - Lisans türü (örn: MIT).

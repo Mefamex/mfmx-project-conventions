@@ -9,8 +9,8 @@
 
 - **Sıralı İlerleme:** Aktif sprint listesini yukarıdan aşağıya takip et; kapsama girmeyen yan işlere dallanma.
 - **Tahmin Yasak:** Varsayımla koda girme; açık kararları `ASK.md` veya `NOTES.md`'ye yönlendir.
-- **Kırmızı Çizgiler:** `sudo`, veri silme (`rm`), kontrolsüz refaktör veya `git push` izinsiz çalıştırılamaz.
-- **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`TODO.DONE.md`](./TODO.DONE.md)'nin en üstüne eklenir.
+- **Kırmızı Çizgiler:** `sudo`, veri silme (`rm`), kontrolsüz refaktör veya `git push` izinsiz çalıştırılamaz. Silme için onaylı yol `Makefile`'daki `clean` / `remove` hedefleridir.
+- **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`docs/TODO.DONE.md`](./docs/TODO.DONE.md)'nin en üstüne eklenir.
 - **Doğrulama Şartı:** `build`, `test`, `lint` veya canlı çalışma kanıtı (exit code 0) sunulmadan görev tamamlanamaz.
 
 ---
@@ -56,4 +56,4 @@
 ## 5. İptal / Kapsam Dışı (Rejected)
 *Tartışılmış ancak sadelik, maliyet veya mimari tercih gereği vazgeçilmiş kararlar (tekrar gündeme gelmemesi için gerekçesiyle tutulur):*
 
-- ~~**[Vazgeçilen Özellik Adı]:**~~ [İptal gerekçesi — örn: Performans yükü getirdiği veya arayüzü kalabalıklaştırdığı için iptal edildi].
+- ~~**[Vazgeçilen Özellik Adı]:**~~ [İptal gerekçesi: neden vazgeçildi (maliyet, karmaşıklık, mimariye uymama) ve hangi koşulda tekrar düşünülebileceği].

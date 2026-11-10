@@ -26,6 +26,8 @@ Standart sözdizimi:
 
 ### Örnekler:
 - `feat(auth): add multi-factor authentication support`
+- `add(templates): add env example file for local setup`
+- `update(readme): update installation steps for uv`
 - `fix(scanner): resolve timeout deadlock in dns thread pool`
 - `refactor(makefile): extract markdown tree generation into external script`
 - `docs(readme): add cli usage flags and quick start examples`
@@ -41,6 +43,8 @@ Standart sözdizimi:
 | :--- | :--- | :--- | :--- |
 | `feat` | Yeni Özellik | Yeni bir yetenek veya modül eklenmesi | MINOR |
 | `fix` | Hata Giderme | Bug, kilitlenme, deadlock veya beklenmeyen davranış çözümü | PATCH |
+| `add` | Ekleme | Yeni dosya, şablon, belge, script veya varlık (asset) eklenmesi | MINOR |
+| `update` | Güncelleme | Mevcut dosya, içerik veya ayarın davranışı bozmadan güncellenmesi | PATCH |
 | `refactor` | Yeniden Yapılanma | Davranışı değiştirmeden mimari ve kod temizliği | - |
 | `perf` | Performans | Çalışma hızını artıran veya kaynak tüketimini düşüren optimizasyon | - |
 | `docs` | Dokümantasyon | README, inline docstring veya kılavuz güncellemeleri | - |
@@ -56,7 +60,8 @@ Standart sözdizimi:
 - **Küçük Harf (Lowercase):** `<type>` ve `<scope>` daima küçük harfle başlar.
 - **Noktasız Bitiş:** Başlık satırının sonuna nokta (`.`) konmaz.
 - **Uzunluk Sınırı:** Başlık 72 karakteri geçmemelidir (terminal okunabilirliği).
-- **Netlik:** *"wip"*, *"fixes"*, *"update"*, *"commit"* gibi belirsiz mesajlar **kesinlikle yasaktır**.
+- **Netlik:** Tip ve açıklaması olmayan tek kelimelik mesajlar (*"wip"*, *"fixes"*, *"update"*, *"commit"*) **kesinlikle yasaktır**. `update(readme): ...` gibi tip olarak kullanımı serbesttir.
+- **`feat` mi `add` mi?** Çalışan koda yeni bir yetenek kazandırılıyorsa `feat`; yeni bir dosya, belge veya şablon ekleniyorsa `add`.
 
 ---
 
@@ -74,8 +79,8 @@ Standart sözdizimi:
 ## 6. Pre-Commit / Pre-Push Hijyeni
 
 Commit veya push öncesinde aşağıdaki detaylı kılavuz ve kontrol listelerinin uygulanması zorunludur:
-- Detaylı commit öncesi adımları için: [`pre_commit_checklist.md`](./pre_commit_checklist.md)
-- Detaylı push öncesi adımları için: [`pre_push_checklist.md`](./pre_push_checklist.md)
+- Detaylı commit öncesi adımları için: [`PRE_COMMIT_CHECKLIST.md`](./PRE_COMMIT_CHECKLIST.md)
+- Detaylı push öncesi adımları için: [`PRE_PUSH_CHECKLIST.md`](./PRE_PUSH_CHECKLIST.md)
 
 Commit veya push öncesi zorunlu 4 ana filtre:
 

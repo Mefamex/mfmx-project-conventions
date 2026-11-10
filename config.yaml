@@ -14,24 +14,27 @@
 # - GÜVENLİ VARSAYILAN: Proje taze klonlandığında bu dosya düzenlenmeden çalıştırıldığında
 #   sistem güvenli/zararsız varsayılanlarla ayağa kalkmalıdır.
 # - ALAN AÇIKLAMASI: Her ayarın üstünde ne işe yaradığı ve onu ezen ortam değişkeni yazılmalıdır.
+# - ENV ADLANDIRMA: <ÖNEK>_<BÖLÜM>_<ANAHTAR>, tamamı büyük harf.
+#   Örn: system.timeout_sec -> APP_SYSTEM_TIMEOUT_SEC (APP yerine proje önekini kullanın).
+# - ANAHTAR DİLİ: Anahtarlar İngilizce ve snake_case yazılır; açıklamalar Türkçe olabilir.
 # =============================================================================
 
 # --- 1. SİSTEM AYARLARI ---
 system:
   # Ayarın açıklaması ve kabul edilen değerler
-  # Ortam değişkeni: APP_PARAMETRE_ADI
-  ayar_adi: "varsayilan_deger"
+  # Ortam değişkeni: APP_SYSTEM_EXAMPLE_SETTING
+  example_setting: "default_value"
 
   # Süre belirten alanlarda birim (_sec, _ms, _min) mutlaka ada eklenir
-  # Ortam değişkeni: APP_TIMEOUT_SEC
+  # Ortam değişkeni: APP_SYSTEM_TIMEOUT_SEC
   timeout_sec: 10
 
 # --- 2. GÜNLÜK VE LOGLAMA ---
 logging:
   # Detay seviyesi: DEBUG, INFO, WARN, ERROR
-  # Ortam değişkeni: APP_LOG_LEVEL
+  # Ortam değişkeni: APP_LOGGING_LEVEL
   level: "INFO"
 
   # Log dosyalarının tutulacağı hedef dizin
-  # Ortam değişkeni: APP_LOG_DIR
+  # Ortam değişkeni: APP_LOGGING_LOG_DIR
   log_dir: "logs"
