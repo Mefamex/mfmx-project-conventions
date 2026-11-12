@@ -1,9 +1,13 @@
 # =============================================================================
-# [Proje Adı] — Yapılandırma Dosyası (config.yaml)
+# [Proje Adı] — Yapılandırma Şablonu (config.example.yaml)
+#
+# KULLANIM: Bu dosya repoda izlenen şablondur. Gerçek ayarlar "config.yaml" adlı
+#           kopyasında tutulur; "config.yaml" .gitignore'dadır ve repoya girmez.
+#           "make install" config.yaml yoksa bu dosyayı kopyalayarak oluşturur.
 #
 # YAPILANDIRMA FELSEFESİ VE ÖNCELİK SIRASI:
 # 1. Ortam Değişkenleri (ENV)    -> [EN YÜKSEK] Çalışma anında verilenler (Örn: APP_AYAR=deger)
-# 2. Bu Dosyadaki Değerler       -> [ORTA] Projeye özel çalışma ayarları
+# 2. config.yaml Değerleri        -> [ORTA] Projeye özel çalışma ayarları
 # 3. Kod İçi Dahili Varsayılan   -> [EN DÜŞÜK] Dosya silinse bile çökmeyi önleyen emniyet değerleri
 #
 # GELİŞTİRİCİ VE AI AJANLARI İÇİN KURALLAR:

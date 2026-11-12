@@ -37,6 +37,13 @@ Projenin hemen başında, aşağıdaki standart Markdown tablosu yer alır:
 - Meta tablosunun hemen altında **1-3 cümlelik net bir özet** bulunur.
 - Projenin ne işe yaradığı, hangi problemi çözdüğü ve temel çalışma mantığı lafı uzatmadan doğrudan aktarılır.
 
+### 1.4. Çalışmaya Başlarken Yönlendirmesi (Zorunlu)
+Özetin hemen altında, çalışma belgelerinin yerini ve okuma sırasını veren tek bir alıntı bloğu bulunur. Böylece README'yi okuyan herkes (zayıf bir AI modeli dahil) `docs/` altındaki belgeleri gözden kaçırmaz:
+
+```markdown
+> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md), sonra [`docs/ASK.md`](./docs/ASK.md), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Kurallar [`docs/standards/`](./docs/standards/) altındadır.
+```
+
 ---
 
 ## 2. Zorunlu Başlıklar ve Sıralama Hiyerarşisi
@@ -47,6 +54,7 @@ Projelerde `README.md` içeriği şu standart başlık akışını izler:
 # [Proje Adı]
 ├── [Meta Tablosu]
 ├── [Vurucu Giriş / Slogan]
+├── [Çalışmaya Başlarken Yönlendirmesi]
 ├── 1. Mimari ve Görsel Önizleme (Architecture & Preview)
 ├── 2. Temel Yetenekler ve Özellikler (Key Features)
 ├── 3. Teknoloji Yığını ve Gereksinimler (Tech Stack & Prerequisites)
@@ -89,7 +97,7 @@ Metin kalabalığı yerine sistemin zihinsel haritası çizilir:
   3. Çalıştırma (`make run` veya `make dev`)
 
 ### 3.5. Yapılandırma (Configuration Guide)
-- `config.yaml` dosyasının nasıl kullanılacağı.
+- `config.example.yaml` şablonundan `config.yaml` oluşturulduğu (`make install` ya da elle kopyalama) ve `config.yaml`'ın repoya girmediği.
 - Öncelik kuralının hatırlatılması: `Ortam Değişkeni (ENV) > config.yaml > Varsayılan`.
 - Hassas anahtarların asla buraya yazılmayacağı, ortam değişkeni üzerinden besleneceği uyarısı.
 
@@ -112,13 +120,17 @@ Yalnızca **ana dizindeki** dosya ve klasörler tanımlanır; alt klasörlerin h
 
 Tüm klasörlerin ve önemli dosyaların haritası için: [`docs/STRUCTURE.md`](./docs/STRUCTURE.md).
 
-- [`TODO.md`](./TODO.md) — [Dosyanın işi, tek cümle.]
+- [`Makefile`](./Makefile) — [Dosyanın işi, tek cümle.]
 - [`src/`](./src/) — [Klasörün işi, tek cümle.]
     - [`main.py`](./src/main.py) — [Bu dosyanın işi, tek cümle.]
-- [`docs/`](./docs/) — Proje hakkında: projenin yapısı, yapılan işler ve verilen kararlar.
+- [`docs/`](./docs/) — Tüm çalışma belgeleri ve kurallar.
+    - [`TODO.md`](./docs/TODO.md) — Giriş kapısı: Bağlam Çapası, Hızlı Giriş, aktif sprint.
+    - [`ASK.md`](./docs/ASK.md) — Açık sorular ve Karara Bağlananlar kapısı.
+    - [`NOTES.md`](./docs/NOTES.md) — Teknik bellek.
     - [`STRUCTURE.md`](./docs/STRUCTURE.md) — Tüm klasörlerin ve önemli dosyaların haritası.
     - [`TODO.DONE.md`](./docs/TODO.DONE.md) — Yapılan işlerin kanıtlı haritası.
     - [`ASKED/`](./docs/ASKED/) — Cevaplanmış soruların kalıcı karar kayıtları.
+    - [`standards/`](./docs/standards/) — Kural belgeleri ve kontrol listeleri.
 ```
 
 ### 3.9. Lisans (License)

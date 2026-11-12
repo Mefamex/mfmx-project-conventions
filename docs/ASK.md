@@ -22,7 +22,7 @@
 Bir soru cevaplandığında (bu dosyadaki "Geliştirici Yanıtı" satırında veya sohbette) adımlar **sırayla** uygulanır:
 
 1. **Cevabı Kaydet:** Cevap sohbette verildiyse önce bu dosyada ilgili sorunun altına tarihle ve tırnak içinde aynen yaz. Yazmadan koda girme.
-2. **Dosyayı Seç:** Karara Bağlananlar listesinde bu konu varsa o dosyayı kullan; yoksa [`docs/ASKED/_SABLON.md`](./docs/ASKED/_SABLON.md) dosyasını kopyalayarak yeni konu dosyası aç.
+2. **Dosyayı Seç:** Karara Bağlananlar listesinde bu konu varsa o dosyayı kullan; yoksa [`docs/ASKED/_SABLON.md`](./ASKED/_SABLON.md) dosyasını kopyalayarak yeni konu dosyası aç.
    - Dosya adı en fazla 4 kelime, ASCII ve kebab-case olur (`token-suresi.md`, `log-formati.md`). Türkçe karakter kullanılmaz (ç→c, ğ→g, ı→i, ö→o, ş→s, ü→u).
    - Adda "ve" geçiyorsa (`auth-ve-log`) konu ikiye bölünür: bir dosya = tek bir karar alanı.
 3. **Kaydı Ekle:** Konu dosyasının Geçmiş bölümünün **en üstüne** yeni kayıt ekle. Dosyanın başındaki "Yürürlükteki Karar" bloğunu güncelle. Önceki geçerli kaydın Durum alanını `Geçersiz — YYYY-MM-DD kararıyla değişti` yap. **Hiçbir kaydı silme.**

@@ -3,7 +3,7 @@
 > **Kayıt Kuralları:**  
 > 1. **Ters Kronolojik:** En son tamamlanan iş daima **en yukarıya** eklenir.  
 > 2. **Kanıt Şartı:** Her kayıtta yapılan işlemle birlikte **çalıştırılan test/komut ve sonucu** (exit code 0, test sayısı, ekran/log çıktısı) yer almalıdır.  
-> 3. **TODO.md Eşzamanlılığı:** Buraya eklenen iş, [`TODO.md`](../TODO.md) listesinden **kaldırılır** (işaretlenip bırakılmaz).  
+> 3. **TODO.md Eşzamanlılığı:** Buraya eklenen iş, [`TODO.md`](./TODO.md) listesinden **kaldırılır** (işaretlenip bırakılmaz).  
 > 4. **Zaman Damgası:** `YYYY-MM-DD HH:MM` biçiminde yerel saat kullanılır; farklı saat dilimlerinde çalışılıyorsa ofset eklenir (örn. `2026-11-10 14:30 +03:00`).  
 > 5. **Tek Dosya, Arşiv Yok:** Bu dosya bölünmez ve arşive taşınmaz; projenin "neler yapıldı" haritasıdır. En yeni kayıt en üstte olduğu için uzaması okumayı bozmaz.
 

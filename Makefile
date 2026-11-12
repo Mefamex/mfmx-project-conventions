@@ -35,6 +35,7 @@ help: ## Mevcut komutları ve açıklamalarını listeler
 # --- 1. KURULUM VE YAŞAM DÖNGÜSÜ (Zorunlu Hedefler) ---
 
 install: ## Bağımlılıkları ilk kez kurar (pnpm install / uv sync / go mod download)
+	@test -f config.yaml || { cp config.example.yaml config.yaml && echo "==> config.yaml, config.example.yaml'dan oluşturuldu."; }
 	@echo "==> Bağımlılıklar yükleniyor..."
 	# [Kurulum komutunu buraya yazın]
 

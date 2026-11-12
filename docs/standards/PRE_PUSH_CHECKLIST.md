@@ -56,14 +56,14 @@
 *Proje, [MFMX Project Conventions](https://github.com/Mefamex/mfmx-project-conventions) deposunda tanımlanan tüm mimari kurallara ve dosya standartlarına tam uyum sağlamalıdır:*
 
 - [ ] **Merkezi Standart Deposu Denetlendi:** [https://github.com/Mefamex/mfmx-project-conventions](https://github.com/Mefamex/mfmx-project-conventions) deposundaki tüm çekirdek dosya kuralları incelendi; projenin bu kuralların hiçbirini ihlal etmediği teyit edildi.
-- [ ] **TODO & DONE Çapası:** [`TODO.md`](../TODO.md) başındaki Context Anchor (Bağlam Çapası) güncel; tamamlanan görevler doğrulama komutu/test kanıtı (exit code 0) ile [`docs/TODO.DONE.md`](../docs/TODO.DONE.md)'ye ters kronolojik olarak aktarıldı.
+- [ ] **TODO & DONE Çapası:** [`TODO.md`](../TODO.md) başındaki Context Anchor (Bağlam Çapası) güncel; tamamlanan görevler doğrulama komutu/test kanıtı (exit code 0) ile [`docs/TODO.DONE.md`](../TODO.DONE.md)'ye ters kronolojik olarak aktarıldı.
 - [ ] **Mühendislik Belleği (`NOTES.md`):** Karşılaşılan kritik platform tuzakları, ölçülmüş sistem limitleri veya elenen alternatifler [`NOTES.md`](../NOTES.md) içine diske sabitlendi.
 - [ ] **Soru ve Karar Kuyruğu (`ASK.md`):** Açık mimari ikilemler veya ajanın otonom aldığı tercihler (`Kendi Kararım`) [`ASK.md`](../ASK.md) dosyasına gerekçeleriyle kaydedildi; tahminle koda girilmedi. Cevaplanan sorular `docs/ASKED/<konu>.md` dosyasına işlendi, Karara Bağlananlar listesi güncel ve cevaplananlar `ASK.md`'den kaldırıldı.
-- [ ] **Kaskad Yapılandırma (`config.yaml`):** Sıfır gizli anahtar (secret/token) kuralına uyuldu; birimli isimlendirme (`timeout_sec` vb.) ve ENV > config.yaml > varsayılan hiyerarşisi korundu.
+- [ ] **Kaskad Yapılandırma (`config.example.yaml`):** Repoda yalnızca `config.example.yaml` izleniyor, gerçek `config.yaml` `.gitignore`'da; yeni ayar eklendiyse şablona da eklendi. Sıfır gizli anahtar (secret/token) kuralına uyuldu; birimli isimlendirme (`timeout_sec` vb.) ve ENV > config.yaml > varsayılan hiyerarşisi korundu.
 - [ ] **Standart Makefile:** 6 zorunlu yaşam döngüsü hedefi (`install`, `reinstall`, `update`, `run`, `clean`, `remove`) tanımlı ve tek başına `make` yazıldığında yardım menüsü dökülüyor.
 - [ ] **Git & README Standartları:** [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) (Conventional Commits, atomik commit) ve [`README.STANDARDS.md`](./README.STANDARDS.md) (meta tablosu, başlık sırası) kurallarına eksiksiz uyuldu.
-- [ ] **Yapı Haritası (`docs/STRUCTURE.md`):** Klasör eklendiyse, silindiyse veya adı değiştiyse [`docs/STRUCTURE.md`](../docs/STRUCTURE.md) aynı commit'te güncellendi; README'deki Proje Yapısı (Ana Dizin) bölümü kökteki değişikliği yansıtıyor.
-- [ ] **Dokümantasyon Güncelliği:** Eklenen yeni parametreler, API rotaları veya ortam değişkenleri [`README.md`](../README.md) içine yansıtıldı; kullanıcıyı etkileyen değişiklikler [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne özetlendi.
+- [ ] **Yapı Haritası (`docs/STRUCTURE.md`):** Klasör eklendiyse, silindiyse veya adı değiştiyse [`docs/STRUCTURE.md`](../STRUCTURE.md) aynı commit'te güncellendi; README'deki Proje Yapısı (Ana Dizin) bölümü kökteki değişikliği yansıtıyor.
+- [ ] **Dokümantasyon Güncelliği:** Eklenen yeni parametreler, API rotaları veya ortam değişkenleri [`README.md`](../../README.md) içine yansıtıldı; kullanıcıyı etkileyen değişiklikler [`CHANGELOG.md`](../../CHANGELOG.md) dosyasının en üstüne özetlendi.
 
 ---
 

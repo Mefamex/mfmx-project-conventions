@@ -15,6 +15,7 @@
 *.pfx
 service-account*.json
 secrets/
+config.yaml
 
 # --- 2. Python (uv / pip) ---
 __pycache__/

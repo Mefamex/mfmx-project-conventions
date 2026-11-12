@@ -13,6 +13,13 @@
 
 ---
 
+## 2026-11-12 | v2.0.0 | Tüm çalışma belgeleri docs/ altında, config şablonu ve Hızlı Giriş
+
+- **Kırıcı Değişiklik — yeni yerleşim :** `TODO.md`, `ASK.md` ve `NOTES.md` kökten `docs/` altına; `standards/` klasörü `docs/standards/` altına taşındı. Kökte yalnızca README, CHANGELOG, LICENSE, Makefile ve yapılandırma şablonları kaldı. Eski yollara verilen linkler çalışmaz.
+- **Kırıcı Değişiklik — config.yaml → config.example.yaml :** Repoda artık yalnızca şablon izlenir. Gerçek `config.yaml` `.gitignore`'dadır; `make install` dosya yoksa şablondan oluşturur.
+- **README yönlendirmesi :** README'nin başına, çalışma belgelerinin `docs/` altında olduğunu ve okuma sırasını (`docs/TODO.md` → `docs/ASK.md` → `docs/NOTES.md`) veren zorunlu bir blok eklendi; README standardına da kural olarak girdi.
+- **docs/TODO.md — Geliştirici Hızlı Girişi :** Aktif Sprint'ten önce 1. bölüm olarak eklendi. Aniden gelen veya nereye yazılacağı belli olmayan fikirler Aciliyet ve Önem alanlarıyla buraya yazılır; ajan oturum başında bunları değerlendirip doğru bölüme ya da dosyaya taşır. Bölüm normalde boş durur.
+
 ## 2026-11-11 | v1.0.0 | Yeni yerleşim, kalıcı karar kaydı ve STRUCTURE.md
 
 - **Yeni yerleşim :** Kural belgeleri `standards/` klasörüne (`GIT_STANDARDS.md`, `PRE_COMMIT_CHECKLIST.md`, `PRE_PUSH_CHECKLIST.md`, `README.STANDARDS.md`), proje hakkındaki kayıtlar `docs/` klasörüne (`STRUCTURE.md`, `TODO.DONE.md`, `ASKED/`) taşındı. Kökte yalnızca günlük çalışma dosyaları kaldı.

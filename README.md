@@ -6,14 +6,16 @@
 | **Website**  | [https://mefamex.com](https://mefamex.com)                     |
 | **License**  | MIT                                                            |
 | **Created**  | 2026-11-07                                                     |
-| **Updated**  | 2026-11-11                                                     |
+| **Updated**  | 2026-11-12                                                     |
 | **Stack**    | Markdown, YAML, GNU Make, Bash (Git hook)                      |
 | **Platform** | Dil ve platform bağımsız; her Git deposu                       |
 | **Status**   | Active Development                                             |
 
 Hem geliştiriciler hem de AI kodlama ajanları (Claude Code, OpenCode, Antigravity, Cursor vb.) için proje yönetimi, belgeleme ve sürüm kontrolü şablonları ile rehberi.  
 Temel ilke: **"Hafızayı sohbete değil, diske sabitle."** Dosyaları olduğu gibi kopyalayabilir ya da kendi projenizde eksik olanı bu rehbere bakarak tamamlayabilirsiniz.  
-Bu README de [`standards/README.STANDARDS.md`](./standards/README.STANDARDS.md) kurallarına göre yazılmıştır; kendi README'nizi hazırlarken örnek olarak kullanabilirsiniz.
+Bu README de [`docs/standards/README.STANDARDS.md`](./docs/standards/README.STANDARDS.md) kurallarına göre yazılmıştır; kendi README'nizi hazırlarken örnek olarak kullanabilirsiniz.
+
+> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md) (Bağlam Çapası, Hızlı Giriş, aktif sprint), sonra [`docs/ASK.md`](./docs/ASK.md) (açık sorular ve Karara Bağlananlar kapısı), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Kurallar [`docs/standards/`](./docs/standards/) altındadır.
 
 ---
 
@@ -22,7 +24,7 @@ Bu README de [`standards/README.STANDARDS.md`](./standards/README.STANDARDS.md) 
 Dosyaların bir iş döngüsü içinde birbirine bağlanışı:
 
 ```text
-[ TODO.md ] ──> [ Kodlama ] ──> [ Belirsizlik? ] ──evet──> [ ASK.md ] ──karar──┐
+[ docs/TODO.md ] ──> [ Kodlama ] ──> [ Belirsizlik? ] ──evet──> [ ASK.md ] ──karar──┐
      ^               │                                                         │
      │               ├──> [ Öğrenilen kısıt / elenen yol ] ──> [ NOTES.md ]    │
      │               v                                                         │
@@ -64,38 +66,40 @@ Dosyaların bir iş döngüsü içinde birbirine bağlanışı:
 # 1. Repoyu klonlayın
 git clone https://github.com/Mefamex/mfmx-project-conventions.git
 
-# 2. İhtiyacınız olan şablonları projenizin köküne kopyalayın
-cp mfmx-project-conventions/{TODO.md,CHANGELOG.md,ASK.md,NOTES.md,config.yaml,.env.example,Makefile,.gitignore} ./projem/
+# 2. Kök şablonlarını projenizin köküne kopyalayın
+cp mfmx-project-conventions/{CHANGELOG.md,config.example.yaml,.env.example,Makefile,.gitignore} ./projem/
 
-# 3. Proje hakkındaki şablonları docs/ altına kopyalayın
+# 3. Çalışma belgelerini docs/ altına kopyalayın (kural belgeleri de dahil)
 mkdir -p ./projem/docs/ASKED
-cp mfmx-project-conventions/docs/{STRUCTURE.md,TODO.DONE.md} ./projem/docs/
+cp mfmx-project-conventions/docs/{TODO.md,ASK.md,NOTES.md,STRUCTURE.md,TODO.DONE.md} ./projem/docs/
 cp mfmx-project-conventions/docs/ASKED/_SABLON.md ./projem/docs/ASKED/
+cp -r mfmx-project-conventions/docs/standards ./projem/docs/
 
-# 4. Makefile'ı yığınınıza göre doldurup yardım menüsünü test edin
-cd projem && make
+# 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml yoksa örnekten oluşturur
+cd projem && make && make install
 ```
 
 Sonra:
 
-1. `TODO.md` başındaki Bağlam ve Amaç kısmını doldurun, görevleri sıralayın. `docs/STRUCTURE.md`'yi projenizin klasörlerine göre yazın.
+1. `docs/TODO.md` başındaki Bağlam ve Amaç kısmını doldurun, görevleri sıralayın. `docs/STRUCTURE.md`'yi projenizin klasörlerine göre yazın.
 2. `Makefile` içindeki `# [...]` satırlarını gerçek komutlarla değiştirin (dosyanın başındaki notlara bakın).
-3. Mimari bir ikilemde `ASK.md`'ye seçenekleriyle yazın. Cevaplanan soruyu `ASK.md` başındaki 6 adımla `docs/ASKED/<konu>.md` dosyasına işleyin. Sistemin öğrettiği kısıt ve elenen yolları `NOTES.md`'ye kaydedin.
+3. Mimari bir ikilemde `docs/ASK.md`'ye seçenekleriyle yazın. Cevaplanan soruyu `docs/ASK.md` başındaki 6 adımla `docs/ASKED/<konu>.md` dosyasına işleyin. Sistemin öğrettiği kısıt ve elenen yolları `docs/NOTES.md`'ye kaydedin.
 4. Biten görevi `docs/TODO.DONE.md`'nin en üstüne zaman damgası ve test çıktısıyla taşıyın; kullanıcıyı etkileyen sonucu `CHANGELOG.md`'ye özetleyin.
-5. `standards/GIT_STANDARDS.md` kurallarıyla atomik commit atın; onay olmadan push etmeyin.
+5. `docs/standards/GIT_STANDARDS.md` kurallarıyla atomik commit atın; onay olmadan push etmeyin.
 
 ### 4.2. AI ajanı ile kurulum
 
 Kullandığınız AI ajanına şu komutu verebilirsiniz:
 
 ```text
-https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: TODO.md, CHANGELOG.md, ASK.md, NOTES.md, config.yaml, .env.example, Makefile, .gitignore; docs/ altında: STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
+https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: CHANGELOG.md, config.example.yaml, .env.example, Makefile, .gitignore; docs/ altında: TODO.md, ASK.md, NOTES.md, STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. docs/standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
 ```
 
 ---
 
 ## 5. Yapılandırma
 
+- Repoda yalnızca şablon `config.example.yaml` izlenir. Gerçek ayarlar `config.yaml`'dadır, `.gitignore`'dadır ve `make install` dosya yoksa örnekten kopyalar.
 - Öncelik sırası: **Ortam değişkeni (ENV) > `config.yaml` > kod içi varsayılan.**
 - ENV adı: `<ÖNEK>_<BÖLÜM>_<ANAHTAR>` (örn. `system.timeout_sec` → `APP_SYSTEM_TIMEOUT_SEC`).
 - Süre ve boyut alanlarında birim ada eklenir: `timeout_sec`, `delay_ms`, `max_size_mb`.
@@ -114,7 +118,7 @@ make install
 make run
 make verify
 
-# Git hook'larını kurmak için: standards/PRE_COMMIT_CHECKLIST.md ve PRE_PUSH_CHECKLIST.md
+# Git hook'larını kurmak için: docs/standards/PRE_COMMIT_CHECKLIST.md ve PRE_PUSH_CHECKLIST.md
 # içindeki betikleri .git/hooks/ altına kaydedip çalıştırılabilir yapın
 chmod +x .git/hooks/pre-commit .git/hooks/pre-push
 ```
@@ -123,7 +127,7 @@ chmod +x .git/hooks/pre-commit .git/hooks/pre-push
 
 ## 7. Güvenlik ve Kırmızı Çizgiler
 
-1. **Tahmin yasak:** Emin olunmayan yerde varsayımla koda girilmez; soru sorulur ya da `ASK.md`'ye yazılır.
+1. **Tahmin yasak:** Emin olunmayan yerde varsayımla koda girilmez; soru sorulur ya da `docs/ASK.md`'ye yazılır.
 2. **Push izne tabi:** Lokal commit serbesttir; `git push` yalnızca açık kullanıcı onayıyla çalışır. `--force` yasaktır.
 3. **Kanıt şartı:** `build`, `test` veya `lint` çıktısı (exit code 0) olmadan iş bitti sayılmaz. Boş şablon Makefile'ın `make verify` çıktısı kanıt değildir.
 4. **Sıfır kalıntı:** İş bitiminde geçici dosyalar, process'ler ve log artıkları temizlenir (`make clean`).
@@ -135,20 +139,20 @@ chmod +x .git/hooks/pre-commit .git/hooks/pre-push
 
 Ana dizindeki dosya ve klasörler. Tüm klasörlerin ve önemli dosyaların haritası için: [`docs/STRUCTURE.md`](./docs/STRUCTURE.md).
 
-- [`TODO.md`](./TODO.md) — Giriş kapısı: Bağlam Çapası, aktif sprint ve backlog.
-- [`ASK.md`](./ASK.md) — Açık sorular, onay bekleyen "Kendi Kararım" kayıtları ve sonda Karara Bağlananlar kapısı.
-- [`NOTES.md`](./NOTES.md) — Teknik bellek: kararların nedeni, elenen yollar, ölçülmüş sınırlar.
 - [`CHANGELOG.md`](./CHANGELOG.md) — Okuyucuya yönelik değişiklik özeti.
-- [`config.yaml`](./config.yaml) — Yapılandırma şablonu (ENV > config.yaml > varsayılan).
+- [`config.example.yaml`](./config.example.yaml) — Yapılandırma şablonu; gerçek `config.yaml` bundan kopyalanır ve repoya girmez.
 - [`.env.example`](./.env.example) — Ortam değişkeni şablonu; gerçek `.env` repoya girmez.
 - [`Makefile`](./Makefile) — Tek komutla yaşam döngüsü; tek başına `make` yardım menüsünü basar.
-- [`.gitignore`](./.gitignore) — Secret, ortam, önbellek, derleme ve OS artıkları.
+- [`.gitignore`](./.gitignore) — Secret, yerel ayar, önbellek, derleme ve OS artıkları.
 - [`LICENSE`](./LICENSE) — MIT lisansı.
-- [`standards/`](./standards/) — Nasıl çalışılır: Git standartları, commit / push kontrol listeleri, README standardı.
-- [`docs/`](./docs/) — Proje hakkında: projenin yapısı, yapılan işler ve verilen kararlar.
+- [`docs/`](./docs/) — Tüm çalışma belgeleri ve kurallar.
+    - [`TODO.md`](./docs/TODO.md) — Giriş kapısı: Bağlam Çapası, Hızlı Giriş, aktif sprint ve backlog.
+    - [`ASK.md`](./docs/ASK.md) — Açık sorular, onay bekleyen "Kendi Kararım" kayıtları ve sonda Karara Bağlananlar kapısı.
+    - [`NOTES.md`](./docs/NOTES.md) — Teknik bellek: kararların nedeni, elenen yollar, ölçülmüş sınırlar.
     - [`STRUCTURE.md`](./docs/STRUCTURE.md) — Tüm klasörlerin ve önemli dosyaların haritası.
     - [`TODO.DONE.md`](./docs/TODO.DONE.md) — Yapılan işlerin kanıtlı haritası (en yeni en üstte).
     - [`ASKED/`](./docs/ASKED/) — Cevaplanmış soruların konu bazlı kalıcı karar kayıtları; şablon: [`_SABLON.md`](./docs/ASKED/_SABLON.md).
+    - [`standards/`](./docs/standards/) — Nasıl çalışılır: Git standartları, commit / push kontrol listeleri, README standardı.
 
 ---
 
