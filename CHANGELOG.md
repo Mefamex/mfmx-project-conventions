@@ -13,7 +13,7 @@
 
 ---
 
-## 2026-11-22 | v2.1.0 | Gizli notlar: docs/NOTES.local.md
+## 2026-11-22 | v2.1.0 | Gizli notlar, PR akışı ve düzeltmeler
 
 - **docs/NOTES.local.md :** Repoya girmemesi gereken notlar için yeni dosya: yerel yollar, iç adresler, kişi / müşteri adları, gizli bağlam ve bir secret'ın nerede durduğu. Secret'ın kendisi buraya da yazılmaz. Repoda şablonu `docs/NOTES.local.example.md` izlenir; `make install` gerçek dosyayı yoksa oluşturur.
 - **Güvenlik — üç katmanlı koruma :** `.gitignore` `*.local` / `*.local.*` dosyalarını dışlar (`*.example.*` şablonları hariç); pre-commit hook `git add -f` ile zorlansa bile bu dosyaları commit'ten durdurur; pre-push kontrol listesi geçmişte sızıntı olup olmadığına bakar.
