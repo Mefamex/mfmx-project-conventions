@@ -32,7 +32,9 @@
 - README.md                        # Vitrin: ne olduğu, nasıl kurulur, nasıl kullanılır
 - CHANGELOG.md                     # Okuyucuya yönelik değişiklik özeti (en yeni üstte)
 - config.example.yaml              # Yapılandırma şablonu; gerçek config.yaml bundan kopyalanır
+- config.yaml                      # (repoda yok) Gerçek ayarlar; make install oluşturur
 - .env.example                     # Ortam değişkeni şablonu; gerçek .env repoya girmez
+- .env                             # (repoda yok) Gerçek ortam değişkenleri ve secret'lar
 - Makefile                         # install, run, verify, clean... (make = yardım menüsü)
 - ...                              # LICENSE, .gitignore
 - docs/

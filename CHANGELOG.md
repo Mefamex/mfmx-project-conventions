@@ -18,6 +18,7 @@
 - **docs/NOTES.local.md :** Repoya girmemesi gereken notlar için yeni dosya: yerel yollar, iç adresler, kişi / müşteri adları, gizli bağlam ve bir secret'ın nerede durduğu. Secret'ın kendisi buraya da yazılmaz. Repoda şablonu `docs/NOTES.local.example.md` izlenir; `make install` gerçek dosyayı yoksa oluşturur.
 - **Güvenlik — üç katmanlı koruma :** `.gitignore` `*.local` / `*.local.*` dosyalarını dışlar (`*.example.*` şablonları hariç); pre-commit hook `git add -f` ile zorlansa bile bu dosyaları commit'ten durdurur; pre-push kontrol listesi geçmişte sızıntı olup olmadığına bakar.
 - **Ajan kuralları :** Dosya arama araçlarında görünmediği için README yönlendirmesine ve `docs/TODO.md` kurallarına tam yoluyla eklendi. İçeriği izlenen dosyalara, commit / PR metnine ve CHANGELOG'a taşınmaz; `git clean -x/-X` onaysız çalıştırılmaz; worktree'lerde dosyanın bulunmadığı belirtildi.
+- **Düzeltmeler :** `make install` artık şablon dosyası (`config.example.yaml`, `docs/NOTES.local.example.md`) olmayan projelerde çökmüyor, yalnızca var olanı kopyalıyor; README'deki AI kurulum promptu gizli not şablonunu da listeliyor; README mimari şeması yeni yerleşime göre yeniden çizildi.
 
 ## 2026-11-12 | v2.0.0 | Tüm çalışma belgeleri docs/ altında, config şablonu ve Hızlı Giriş
 

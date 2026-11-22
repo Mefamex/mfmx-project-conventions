@@ -21,7 +21,7 @@
 - **Kararı geliştirici verdiyse** (bir soruya cevap, onaylanan Kendi Kararım): kayıt `docs/ASKED/<konu>.md` dosyasına gider, buraya kopyalanmaz.
 - **Bilgiyi sistem öğrettiyse** (ölçülen sınır, elenen yol, platform tuzağı): buraya yazılır.
 - **Bilgi gizli kalmalıysa** (kişi / müşteri adı, iç adres, makineye özel yol, gizli bağlam): repoya girmeyen `docs/NOTES.local.md`'ye yazılır. Oradan genel bir ders çıkarsa kişisel ayrıntı ayıklanıp buraya taşınır.
-- İkisi aynı konuya değiyorsa kopyalamak yerine birbirine link verilir; iki kopya zamanla birbirinden kopar.
+- Birden fazlası aynı konuya değiyorsa kopyalamak yerine birbirine link verilir; kopyalar zamanla birbirinden kopar. `NOTES.local.md`'ye link verilebilir, ama içeriği izlenen dosyalara kopyalanmaz.
 
 ---
 
@@ -29,7 +29,7 @@
 
 Yapay zekâ ajanları ve yazılımcılar aşağıdaki durumlar gerçekleştiğinde bu dosyayı güncellemekle yükümlüdür:
 
-1. **Bir Alternatiften Vazgeçildiğinde:** Bir kütüphane, algoritma veya mimari yöntem denenip başarısız olduğunda veya elendiğinde (hemen "Elenen Alternatifler" altına gerekçesiyle yazılır).
+1. **Bir Alternatiften Vazgeçildiğinde:** Bir kütüphane, algoritma veya mimari yöntem denenip başarısız olduğunda veya elendiğinde (hemen "Denenip Vazgeçilen Yollar" başlığı altına gerekçesiyle yazılır).
 2. **Beklenmeyen Bir Hata/Gariplik Çözüldüğünde:** Belgelerde yazmayan bir işletim sistemi, kütüphane veya ağ garipliği keşfedilip etrafından dolanıldığında.
 3. **Kritik Bir Eşik Ölçüldüğünde:** Tahmin değil; bizzat çalıştırılarak bir hız limiti, VRAM tavanı, timeout süresi veya eşzamanlılık sınırı test edilip doğrulandığında.
 4. **Mimari Bir Tercih Kesinleştiğinde:** Projenin omurgasını etkileyen iki seçenek arasında bir seçim yapıldığında.
