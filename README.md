@@ -21,15 +21,13 @@ Bu README de [`docs/standards/README.STANDARDS.md`](./docs/standards/README.STAN
 
 ## 1. Mimari ve Akış
 
-Dosyaların bir iş döngüsü içinde birbirine bağlanışı:
+Dosyaların bir iş döngüsü içinde birbirine bağlanışı (iş bitince sıradaki görev için tekrar `docs/TODO.md`):
 
 ```text
-[ docs/TODO.md ] ──> [ Kodlama ] ──> [ Belirsizlik? ] ──evet──> [ ASK.md ] ──karar──┐
-     ^               │                                                         │
-     │               ├──> [ Öğrenilen kısıt / elenen yol ] ──> [ NOTES.md ]    │
-     │               v                                                         │
-     │    [ make verify (kanıt) ] ──> [ docs/TODO.DONE.md ] ──> [ commit ] ──> [ onay ] ──> [ push ]
-     └─────────────────────────────────────────────────────────────────────────┘
+[ docs/TODO.md ] ──> [ Kodlama ] ──┬──> Belirsizlik ──> [ docs/ASK.md ] ──cevap──> [ docs/ASKED/<konu>.md ]
+                                   ├──> Öğrenilen kısıt / elenen yol ──> [ docs/NOTES.md ]
+                                   ├──> Gizli bağlam ──> [ docs/NOTES.local.md ] (repoda yok)
+                                   └──> [ make verify ] ──> [ docs/TODO.DONE.md ] ──> commit ──> onay ──> push
 ```
 
 ---
@@ -92,7 +90,7 @@ Sonra:
 Kullandığınız AI ajanına şu komutu verebilirsiniz:
 
 ```text
-https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: CHANGELOG.md, config.example.yaml, .env.example, Makefile, .gitignore; docs/ altında: TODO.md, ASK.md, NOTES.md, STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. docs/standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
+https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: CHANGELOG.md, config.example.yaml, .env.example, Makefile, .gitignore; docs/ altında: TODO.md, ASK.md, NOTES.md, NOTES.local.example.md, STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. docs/standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
 ```
 
 ---

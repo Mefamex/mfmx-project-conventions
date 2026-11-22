@@ -6,7 +6,7 @@
 #           "make install" config.yaml yoksa bu dosyayı kopyalayarak oluşturur.
 #
 # YAPILANDIRMA FELSEFESİ VE ÖNCELİK SIRASI:
-# 1. Ortam Değişkenleri (ENV)    -> [EN YÜKSEK] Çalışma anında verilenler (Örn: APP_AYAR=deger)
+# 1. Ortam Değişkenleri (ENV)    -> [EN YÜKSEK] Çalışma anında verilenler (Örn: APP_SYSTEM_TIMEOUT_SEC=30)
 # 2. config.yaml Değerleri        -> [ORTA] Projeye özel çalışma ayarları
 # 3. Kod İçi Dahili Varsayılan   -> [EN DÜŞÜK] Dosya silinse bile çökmeyi önleyen emniyet değerleri
 #

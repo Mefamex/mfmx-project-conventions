@@ -18,16 +18,16 @@ Projelerde `README.md` dosyasının en tepesi projenin kimlik kartıyla başlar:
 Projenin hemen başında, aşağıdaki standart Markdown tablosu yer alır:
 
 ```markdown
-|              |                                                               |
-| ------------ | ------------------------------------------------------------- |
-| **Author**   | [Geliştirici / Kurum Adı](https://github.com/...)             |
-| **Website**  | [https://example.com](https://example.com)                    |
-| **License**  | MIT                                                           |
-| **Created**  | YYYY-MM-DD                                                    |
-| **Updated**  | YYYY-MM-DD                                                    |
-| **Stack**    | [Çekirdek Diller ve Kütüphaneler / Örn: Python 3.12, Go 1.22] |
-| **Platform** | [Hedef Ortam / Örn: Linux, Cloudflare Workers, Web]           |
-| **Status**   | Production Ready / Active Development                         |
+|              |                                                                                 |
+| ------------ | ------------------------------------------------------------------------------- |
+| **Author**   | [Geliştirici / Kurum Adı](https://github.com/...)                               |
+| **Website**  | [https://example.com](https://example.com)                                      |
+| **License**  | MIT                                                                             |
+| **Created**  | YYYY-MM-DD                                                                      |
+| **Updated**  | YYYY-MM-DD                                                                      |
+| **Stack**    | [Çekirdek Diller ve Kütüphaneler / Örn: Python 3.12, Go 1.22]                   |
+| **Platform** | [Hedef Ortam / Örn: Linux, Cloudflare Workers, Web]                             |
+| **Status**   | Production Ready / Active Development                                           |
 | **Template** | [mfmx-project-conventions](https://github.com/Mefamex/mfmx-project-conventions) |
 ```
 
