@@ -16,6 +16,10 @@
 service-account*.json
 secrets/
 config.yaml
+# Yerel / gizli notlar ve ayarlar (örn. docs/NOTES.local.md); şablonlar (*.example.*) izlenir
+*.local
+*.local.*
+!*.example.*
 
 # --- 2. Python (uv / pip) ---
 __pycache__/

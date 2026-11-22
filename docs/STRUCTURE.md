@@ -39,6 +39,8 @@
     - TODO.md                      # Giriş kapısı: Bağlam Çapası + Hızlı Giriş + aktif sprint
     - ASK.md                       # Açık sorular, onay bekleyen kararlar, sonda karar kapısı
     - NOTES.md                     # Teknik bellek: neden, elenen yollar, ölçülmüş sınırlar
+    - NOTES.local.example.md       # Gizli notlar şablonu
+    - NOTES.local.md               # (repoda yok) Gizli / yerel notlar; make install oluşturur
     - STRUCTURE.md                 # Bu dosya: klasör ve dosya haritası
     - TODO.DONE.md                 # Yapılanların kanıtlı haritası (en yeni üstte, tek dosya)
     - ASKED/

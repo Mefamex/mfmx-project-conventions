@@ -41,7 +41,7 @@ Projenin hemen başında, aşağıdaki standart Markdown tablosu yer alır:
 Özetin hemen altında, çalışma belgelerinin yerini ve okuma sırasını veren tek bir alıntı bloğu bulunur. Böylece README'yi okuyan herkes (zayıf bir AI modeli dahil) `docs/` altındaki belgeleri gözden kaçırmaz:
 
 ```markdown
-> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md), sonra [`docs/ASK.md`](./docs/ASK.md), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Kurallar [`docs/standards/`](./docs/standards/) altındadır.
+> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md), sonra [`docs/ASK.md`](./docs/ASK.md), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Varsa gizli notlar için `docs/NOTES.local.md` de tam yoluyla okunur. Kurallar [`docs/standards/`](./docs/standards/) altındadır.
 ```
 
 ---

@@ -86,7 +86,7 @@ Commit veya push öncesinde aşağıdaki detaylı kılavuz ve kontrol listelerin
 
 Commit veya push öncesi zorunlu 4 ana filtre:
 
-1. **Secret & Key Taraması:** `.env`, API token, bot token veya SSH key depoya ASLA eklenemez.
+1. **Secret & Key Taraması:** `.env`, API token, bot token veya SSH key depoya ASLA eklenemez. Yerel / gizli dosyalar (`*.local`, `*.local.*`, örn. `docs/NOTES.local.md`) da asla commit'lenmez.
 2. **Kişisel Veri (PII) Hijyeni:** Telefon, raw kullanıcı ID'si, yerel IP/SSID ve şifreler depodan temizlenmelidir.
 3. **Çöp Dosya Temizliği:** `__pycache__`, `.pytest_cache`, derleme çıktıları (`dist/`, `build/`), `.swp` ve işletim sistemi artıkları `.gitignore` ile engellenmelidir.
 4. **Doğrulama Şartı:** Derleme (`build`), test veya syntax (`lint`) kontrolü geçmeden commit atılamaz.
