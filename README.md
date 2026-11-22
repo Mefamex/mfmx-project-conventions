@@ -36,9 +36,9 @@ Dosyaların bir iş döngüsü içinde birbirine bağlanışı:
 
 ## 2. Temel Yetenekler
 
-* **Bağlam kaybını önler (context drift):** Projenin amacı `TODO.md` başındaki Bağlam Çapası'nda, kararların gerekçesi `NOTES.md`'de durur; oturum sıfırlansa da kimse sıfırdan başlamaz.
-* **Tahminle kodlamayı engeller:** Kritik ikilemler `ASK.md`'ye seçenekleriyle yazılır; otonom alınan kararlar "Kendi Kararım" tablosuyla onaylanana kadar denetlenebilir kalır.
-* **Verilen kararı unutturmaz:** Cevaplanan sorular `docs/ASKED/<konu>.md` dosyalarında silinmeden tutulur; `ASK.md` sonundaki kapı listesi her oturumda okunduğu için karar gözden kaçmaz, değişen karar "Geçersiz" olarak işaretlenir.
+* **Bağlam kaybını önler (context drift):** Projenin amacı `docs/TODO.md` başındaki Bağlam Çapası'nda, kararların gerekçesi `docs/NOTES.md`'de durur; oturum sıfırlansa da kimse sıfırdan başlamaz.
+* **Tahminle kodlamayı engeller:** Kritik ikilemler `docs/ASK.md`'ye seçenekleriyle yazılır; otonom alınan kararlar "Kendi Kararım" tablosuyla onaylanana kadar denetlenebilir kalır.
+* **Verilen kararı unutturmaz:** Cevaplanan sorular `docs/ASKED/<konu>.md` dosyalarında silinmeden tutulur; `docs/ASK.md` sonundaki kapı listesi her oturumda okunduğu için karar gözden kaçmaz, değişen karar "Geçersiz" olarak işaretlenir.
 * **Doğrulanmamış iddiayı kapatır:** `docs/TODO.DONE.md`'ye çalıştırılan komut ve exit code yazılmadan iş bitmiş sayılmaz.
 * **Sızıntıyı erken yakalar:** Commit öncesi hook yalnızca eklenen satırları tarar, gitleaks kuruluysa onu kullanır.
 * **Her yığında aynı komutlar:** `make install`, `make run`, `make verify` her projede aynı anlamı taşır.
