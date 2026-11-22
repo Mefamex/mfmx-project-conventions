@@ -13,6 +13,10 @@
 
 ---
 
+## Yayınlanmamış
+
+- **Otomatik test (CI) :** Repoya `scripts/check.sh` bütünlük testi ve onu her PR'da ve `main`'e her push'ta çalıştıran GitHub Actions iş akışı (`.github/workflows/check.yml`) eklendi. Test; kırık linkleri, `make install` davranışını, pre-commit / pre-push hook'larını, şablon notunu, geçmişte gizli dosya olup olmadığını ve etiketlerin annotated olduğunu denetler. Bu araçlar reponun kendisi içindir, şablon olarak kopyalanmaz.
+
 ## 2026-11-22 | v2.1.0 | Gizli notlar, PR akışı ve düzeltmeler
 
 - **docs/NOTES.local.md :** Repoya girmemesi gereken notlar için yeni dosya: yerel yollar, iç adresler, kişi / müşteri adları, gizli bağlam ve bir secret'ın nerede durduğu. Secret'ın kendisi buraya da yazılmaz. Repoda şablonu `docs/NOTES.local.example.md` izlenir; `make install` gerçek dosyayı yoksa oluşturur.
