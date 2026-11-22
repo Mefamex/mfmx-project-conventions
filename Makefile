@@ -36,6 +36,7 @@ help: ## Mevcut komutları ve açıklamalarını listeler
 
 install: ## Bağımlılıkları ilk kez kurar (pnpm install / uv sync / go mod download)
 	@test -f config.yaml || ! test -f config.example.yaml || { cp config.example.yaml config.yaml && echo "==> config.yaml, config.example.yaml'dan oluşturuldu."; }
+	@test -f .env || ! test -f .env.example || { cp .env.example .env && echo "==> .env, .env.example'dan oluşturuldu; gerçek değerleri yalnızca .env'e yazın."; }
 	@test -f docs/NOTES.local.md || ! test -f docs/NOTES.local.example.md || { cp docs/NOTES.local.example.md docs/NOTES.local.md && echo "==> docs/NOTES.local.md (gizli notlar, repoya girmez) oluşturuldu."; }
 	@echo "==> Bağımlılıklar yükleniyor..."
 	# [Kurulum komutunu buraya yazın]

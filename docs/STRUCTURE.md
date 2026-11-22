@@ -34,7 +34,7 @@
 - config.example.yaml              # Yapılandırma şablonu; gerçek config.yaml bundan kopyalanır
 - config.yaml                      # (repoda yok) Gerçek ayarlar; make install oluşturur
 - .env.example                     # Ortam değişkeni şablonu; gerçek .env repoya girmez
-- .env                             # (repoda yok) Gerçek ortam değişkenleri ve secret'lar
+- .env                             # (repoda yok) Gerçek ortam değişkenleri ve secret'lar; make install oluşturur
 - Makefile                         # install, run, verify, clean... (make = yardım menüsü)
 - ...                              # LICENSE, .gitignore
 - docs/
