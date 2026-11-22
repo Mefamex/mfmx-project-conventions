@@ -119,6 +119,9 @@ make verify
 # Git hook'larını kurmak için: docs/standards/PRE_COMMIT_CHECKLIST.md ve PRE_PUSH_CHECKLIST.md
 # içindeki betikleri .git/hooks/ altına kaydedip çalıştırılabilir yapın
 chmod +x .git/hooks/pre-commit .git/hooks/pre-push
+
+# Bu reponun kendi bütünlük testi (CI her PR'da da çalıştırır)
+bash scripts/check.sh
 ```
 
 ---
@@ -143,6 +146,10 @@ Ana dizindeki dosya ve klasörler. Tüm klasörlerin ve önemli dosyaların hari
 - [`Makefile`](./Makefile) — Tek komutla yaşam döngüsü; tek başına `make` yardım menüsünü basar.
 - [`.gitignore`](./.gitignore) — Secret, yerel ayar, önbellek, derleme ve OS artıkları.
 - [`LICENSE`](./LICENSE) — MIT lisansı.
+- [`scripts/`](./scripts/) — Bu reponun kendi araçları; şablon değildir, kopyalanmaz.
+    - [`check.sh`](./scripts/check.sh) — Bütünlük testi; `bash scripts/check.sh` ile çalışır.
+- [`.github/`](./.github/) — GitHub ayarları.
+    - [`workflows/check.yml`](./.github/workflows/check.yml) — Her PR'da ve `main`'e push'ta `scripts/check.sh`'i çalıştıran CI.
 - [`docs/`](./docs/) — Tüm çalışma belgeleri ve kurallar.
     - [`TODO.md`](./docs/TODO.md) — Giriş kapısı: Bağlam Çapası, Hızlı Giriş, aktif sprint ve backlog.
     - [`ASK.md`](./docs/ASK.md) — Açık sorular, onay bekleyen "Kendi Kararım" kayıtları ve sonda Karara Bağlananlar kapısı.

@@ -19,6 +19,9 @@
 
 ```text
 - .git/                  # (repoda yok, git tarafından üretilir) Sürüm geçmişi
+- .github/               # GitHub ayarları
+    - workflows/         # GitHub Actions: her PR'da scripts/check.sh çalışır
+- scripts/               # Bu reponun kendi araçları (şablon değildir, kopyalanmaz)
 - docs/                  # Tüm çalışma belgeleri: görevler, sorular, kararlar, notlar, yapı haritası
     - ASKED/             # Cevaplanmış soruların konu bazlı kalıcı karar kayıtları
     - standards/         # NASIL ÇALIŞILIR: kural belgeleri ve kontrol listeleri
@@ -37,6 +40,11 @@
 - .env                             # (repoda yok) Gerçek ortam değişkenleri ve secret'lar; make install oluşturur
 - Makefile                         # install, run, verify, clean... (make = yardım menüsü)
 - ...                              # LICENSE, .gitignore
+- .github/
+    - workflows/
+        - check.yml                # CI: PR ve main push'ta bütünlük testini çalıştırır
+- scripts/
+    - check.sh                     # Bütünlük testi: linkler, make install, hook'lar, şablon notu, etiketler
 - docs/
     - TODO.md                      # Giriş kapısı: Bağlam Çapası + Hızlı Giriş + aktif sprint
     - ASK.md                       # Açık sorular, onay bekleyen kararlar, sonda karar kapısı

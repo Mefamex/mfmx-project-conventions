@@ -1,0 +1,27 @@
+# Repo bütünlük testi: scripts/check.sh'i her PR'da ve main'e her push'ta çalıştırır.
+name: check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Repoyu tüm geçmiş ve etiketlerle al
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: PyYAML kur
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends python3-yaml
+
+      - name: Testleri çalıştır
+        run: bash scripts/check.sh
