@@ -108,3 +108,16 @@ Geriye dönük uyumsuzluklarda:
 - **CHANGELOG ile Bağ:** Sürüm çıkınca `CHANGELOG.md`'deki ilgili kaydın başlığına sürüm eklenir (`## YYYY-MM-DD | v1.2.0 | başlık`); GitHub release notu bu kaydın maddeleridir.
 - **Ne Zaman Release:** Her commit release değildir. Kullanıcıyı etkileyen bir grup değişiklik tamamlanıp doğrulandığında çıkılır.
 - **İzne Tabi:** Etiket ve release push ile aynı kurala tabidir; açık kullanıcı onayı olmadan yayınlanmaz.
+
+---
+
+## 9. Dal ve Pull Request Akışı
+
+Tek kişilik projede onaylı `main` push serbesttir; ekip projelerinde ve takip edilmesi istenen her değişiklikte dal + PR kullanılır.
+
+- **Dal Adı:** `<type>/<kısa-açıklama>` biçiminde, commit tipiyle aynı önek: `feat/`, `fix/`, `add/`, `update/`, `docs/`, `refactor/`, `chore/`. Yalnızca küçük harf, rakam ve tire; boşluk, alt çizgi ve Türkçe karakter yok. Örn. `fix/make-install-missing-template`.
+- **Bir Dal = Bir Konu:** İlgisiz değişiklikler aynı dala ve aynı PR'a girmez. Düzeltmeler (`fix/`) ile yeni özellikler (`feat/`, `add/`) ayrı PR'lardır.
+- **PR Açıklaması:** Üç bölüm içerir: **Ne değişti**, **Neden**, **Doğrulama** (çalıştırılan komutlar ve sonuçları). Gizli notların (`*.local`) içeriği PR metnine yazılmaz.
+- **Birleştirme Yöntemi:** Varsayılan **merge commit**'tir; PR'daki atomik commitleri ve yazar / `Co-authored-by` bilgisini olduğu gibi korur. Squash, commitleri tek commit'e indirip bu bilgiyi kaybettirir; yalnızca dalda dağınık ara commitler varsa ve geliştirici isterse kullanılır.
+- **Birleştikten Sonra:** Dal hem uzakta hem yerelde silinir (`gh pr merge --merge --delete-branch`, ardından `git branch -d <dal>`); ana dal güncellenir (`git pull --ff-only`). Uzun ömürlü yan dal bırakılmaz.
+- **Onay:** PR açmak ve birleştirmek push ile aynı kurala tabidir; açık kullanıcı onayı olmadan yapılmaz.

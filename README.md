@@ -73,7 +73,7 @@ cp mfmx-project-conventions/docs/{TODO.md,ASK.md,NOTES.md,NOTES.local.example.md
 cp mfmx-project-conventions/docs/ASKED/_SABLON.md ./projem/docs/ASKED/
 cp -r mfmx-project-conventions/docs/standards ./projem/docs/
 
-# 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml ve docs/NOTES.local.md yoksa şablondan oluşturur
+# 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml, .env ve docs/NOTES.local.md yoksa şablondan oluşturur
 cd projem && make && make install
 ```
 
@@ -129,7 +129,7 @@ chmod +x .git/hooks/pre-commit .git/hooks/pre-push
 2. **Push izne tabi:** Lokal commit serbesttir; `git push` yalnızca açık kullanıcı onayıyla çalışır. `--force` yasaktır.
 3. **Kanıt şartı:** `build`, `test` veya `lint` çıktısı (exit code 0) olmadan iş bitti sayılmaz. Boş şablon Makefile'ın `make verify` çıktısı kanıt değildir.
 4. **Sıfır kalıntı:** İş bitiminde geçici dosyalar, process'ler ve log artıkları temizlenir (`make clean`).
-5. **Sıfır sızıntı:** Secret ve kişisel veri (telefon, IP, SSID, şifre, token) çalışma dosyalarına da git geçmişine de girmez.
+5. **Sıfır sızıntı:** Secret ve kişisel veri (telefon, IP, SSID, şifre, token) çalışma dosyalarına da git geçmişine de girmez. Gizli bağlam repoya girmeyen `docs/NOTES.local.md`'ye yazılır; içeriği izlenen dosyalara, commit / PR metnine veya CHANGELOG'a taşınmaz.
 
 ---
 
