@@ -16,10 +16,11 @@
 
 ---
 
-## ASK / docs/ASKED ile Sınır
+## ASK / docs/ASKED / NOTES.local ile Sınır
 
 - **Kararı geliştirici verdiyse** (bir soruya cevap, onaylanan Kendi Kararım): kayıt `docs/ASKED/<konu>.md` dosyasına gider, buraya kopyalanmaz.
 - **Bilgiyi sistem öğrettiyse** (ölçülen sınır, elenen yol, platform tuzağı): buraya yazılır.
+- **Bilgi gizli kalmalıysa** (kişi / müşteri adı, iç adres, makineye özel yol, gizli bağlam): repoya girmeyen `docs/NOTES.local.md`'ye yazılır. Oradan genel bir ders çıkarsa kişisel ayrıntı ayıklanıp buraya taşınır.
 - İkisi aynı konuya değiyorsa kopyalamak yerine birbirine link verilir; iki kopya zamanla birbirinden kopar.
 
 ---

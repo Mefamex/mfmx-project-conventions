@@ -40,6 +40,7 @@
 
 - [ ] **Gönderilecek Commitler İncelendi:** `git log origin/<hedef-dal>..HEAD --stat` veya `git log --oneline -n 5` ile sadece gönderilmek istenen commitlerin listede olduğu doğrulandı.
 - [ ] **Geçici ve Tembel Commitler Ayıklandı:** Geliştirme esnasında atılmış "wip", "deneme", "fix typo", "temp" gibi dağınık commitler varsa `git rebase -i` ile squash edilip temizlendi.
+- [ ] **Yerel / Gizli Dosya Geçmişte Yok:** `git log --all --name-only --format= | grep -E '\.local(\.|$)' | grep -v '\.example\.'` boş dönüyor; gizli not dosyası geçmişe hiç girmedi. (Girdiyse geçmiş temizlenmeden push yapılamaz.)
 - [ ] **Tarihsel Sızıntı Kontrolü:** Önceki bir commit'te yanlışlıkla eklenip bir sonraki commit'te silinmiş gizli bir anahtar (secret/token) yok. (Varsa git geçmişi temizlenmeden push yapılamaz).
 
 ---

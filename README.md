@@ -6,7 +6,7 @@
 | **Website**  | [https://mefamex.com](https://mefamex.com)                     |
 | **License**  | MIT                                                            |
 | **Created**  | 2026-11-07                                                     |
-| **Updated**  | 2026-11-12                                                     |
+| **Updated**  | 2026-11-22                                                     |
 | **Stack**    | Markdown, YAML, GNU Make, Bash (Git hook)                      |
 | **Platform** | Dil ve platform bağımsız; her Git deposu                       |
 | **Status**   | Active Development                                             |
@@ -15,7 +15,7 @@ Hem geliştiriciler hem de AI kodlama ajanları (Claude Code, OpenCode, Antigrav
 Temel ilke: **"Hafızayı sohbete değil, diske sabitle."** Dosyaları olduğu gibi kopyalayabilir ya da kendi projenizde eksik olanı bu rehbere bakarak tamamlayabilirsiniz.  
 Bu README de [`docs/standards/README.STANDARDS.md`](./docs/standards/README.STANDARDS.md) kurallarına göre yazılmıştır; kendi README'nizi hazırlarken örnek olarak kullanabilirsiniz.
 
-> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md) (Bağlam Çapası, Hızlı Giriş, aktif sprint), sonra [`docs/ASK.md`](./docs/ASK.md) (açık sorular ve Karara Bağlananlar kapısı), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Kurallar [`docs/standards/`](./docs/standards/) altındadır.
+> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md) (Bağlam Çapası, Hızlı Giriş, aktif sprint), sonra [`docs/ASK.md`](./docs/ASK.md) (açık sorular ve Karara Bağlananlar kapısı), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Varsa gizli notlar için [`docs/NOTES.local.md`](./docs/NOTES.local.example.md) de tam yoluyla okunur (repoya girmez, arama araçları göstermez; içeriği dışarı taşınmaz). Kurallar [`docs/standards/`](./docs/standards/) altındadır.
 
 ---
 
@@ -71,11 +71,11 @@ cp mfmx-project-conventions/{CHANGELOG.md,config.example.yaml,.env.example,Makef
 
 # 3. Çalışma belgelerini docs/ altına kopyalayın (kural belgeleri de dahil)
 mkdir -p ./projem/docs/ASKED
-cp mfmx-project-conventions/docs/{TODO.md,ASK.md,NOTES.md,STRUCTURE.md,TODO.DONE.md} ./projem/docs/
+cp mfmx-project-conventions/docs/{TODO.md,ASK.md,NOTES.md,NOTES.local.example.md,STRUCTURE.md,TODO.DONE.md} ./projem/docs/
 cp mfmx-project-conventions/docs/ASKED/_SABLON.md ./projem/docs/ASKED/
 cp -r mfmx-project-conventions/docs/standards ./projem/docs/
 
-# 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml yoksa örnekten oluşturur
+# 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml ve docs/NOTES.local.md yoksa şablondan oluşturur
 cd projem && make && make install
 ```
 
@@ -149,6 +149,7 @@ Ana dizindeki dosya ve klasörler. Tüm klasörlerin ve önemli dosyaların hari
     - [`TODO.md`](./docs/TODO.md) — Giriş kapısı: Bağlam Çapası, Hızlı Giriş, aktif sprint ve backlog.
     - [`ASK.md`](./docs/ASK.md) — Açık sorular, onay bekleyen "Kendi Kararım" kayıtları ve sonda Karara Bağlananlar kapısı.
     - [`NOTES.md`](./docs/NOTES.md) — Teknik bellek: kararların nedeni, elenen yollar, ölçülmüş sınırlar.
+    - [`NOTES.local.example.md`](./docs/NOTES.local.example.md) — Gizli notlar şablonu; gerçek `docs/NOTES.local.md` repoya girmez.
     - [`STRUCTURE.md`](./docs/STRUCTURE.md) — Tüm klasörlerin ve önemli dosyaların haritası.
     - [`TODO.DONE.md`](./docs/TODO.DONE.md) — Yapılan işlerin kanıtlı haritası (en yeni en üstte).
     - [`ASKED/`](./docs/ASKED/) — Cevaplanmış soruların konu bazlı kalıcı karar kayıtları; şablon: [`_SABLON.md`](./docs/ASKED/_SABLON.md).

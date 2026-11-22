@@ -13,6 +13,7 @@
 
 - [ ] **Hardcoded Gizli Değer Yok:** Kaynak kodda, test mock'larında veya yorum satırlarında API key, token, şifre veya özel anahtar (private key) bulunmuyor.
 - [ ] **İstemci Tarafı Env Tuzakları:** Frontend projelerinde `NEXT_PUBLIC_`, `VITE_`, `REACT_APP_` gibi istemciye açık öneklerde hassas backend anahtarları yer almıyor.
+- [ ] **Yerel / Gizli Dosya Sahnede Yok:** `docs/NOTES.local.md`, `.env.local`, `CLAUDE.local.md` gibi `*.local` / `*.local.*` dosyalar `git add -f` ile bile sahneye alınmadı. (Şablonlar `*.example.*` serbesttir.)
 - [ ] **Gerçek Yapılandırma Dosyaları İhmal Edildi:** `.env`, `.env.local`, `service-account.json`, `*.pem`, `*.key` dosyaları `.gitignore` içinde yer alıyor. Depoya yalnızca `.env.example` gibi sahte şablonlar ekleniyor.
 - [ ] **Büyük ve İkili Dosya Engeli:** Depoya yanlışlıkla eklenmiş veri seti (`.csv`, `.sqlite`), model ağırlığı (`.bin`, `.onnx`), arşiv (`.zip`) veya derleme çıktısı (`dist/`, `build/`) yok.
 
@@ -89,6 +90,16 @@ set -euo pipefail
 export LC_ALL=C   # Türkçe locale'de grep -i "I/ı" eşleşmesini bozar; regex'leri C locale'de çalıştır
 
 echo "==> [Pre-Commit] Kontroller başlatılıyor..."
+
+# 0. Yerel / gizli dosyalar (*.local, *.local.*) asla commit'lenmez; şablonlar (*.example.*) serbest.
+#    .gitignore'u "git add -f" ile aşan durumu da yakalar.
+local_files="$(git diff --cached --name-only --diff-filter=ACMR | grep -E '(^|/)[^/]*\.local(\.[^/]*)?$' | grep -vE '\.example(\.[^/]*)?$' || true)"
+if [ -n "$local_files" ]; then
+    echo "HATA: Yerel/gizli dosya commit'lenemez:"
+    printf '  %s\n' $local_files
+    echo "Sahneden çıkarın: git restore --staged <dosya>"
+    exit 1
+fi
 
 # Yalnızca sahnelenen değişikliklerde EKLENEN satırlar (dosya başlıkları hariç)
 added="$(git diff --cached -U0 --no-color | grep -E '^\+' | grep -vE '^\+\+\+' || true)"
