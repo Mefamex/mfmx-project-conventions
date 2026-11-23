@@ -3,7 +3,7 @@
 > **Ne Yapar:** [Kullanıcının gözünden tek-iki cümle: bu özellik kime, ne sağlar]  
 > **Durum:** [Aktif / Deneysel / Park]  
 > **Gizli kısım:** [Yok / Var → `docs/features/<ozellik-adi>.local.md`, tam yoluyla okunur]  
-> **Son doğrulama:** [YYYY-MM-DD — bu dosyanın gerçek durumla en son karşılaştırıldığı gün]  
+> **Son doğrulama:** [YYYY-MM-DD, commit `abc1234` — bu dosyanın gerçek durumla en son karşılaştırıldığı gün ve o andaki commit]  
 > **Doğrulama komutu:** [`...` — çalıştırılınca bu dosyanın hâlâ doğru olduğunu gösteren komut ve beklenen sonuç; ajan dosyaya güvenmeden önce bunu çalıştırır]
 
 <!--
@@ -18,7 +18,9 @@ BU ŞABLON NASIL KULLANILIR:
    (şifre, token, anahtar) oraya da yazılmaz, yalnızca nerede durduğu yazılır.
 5. Ajan bu dosyaya güvenmeden önce yukarıdaki "Doğrulama komutu"nu çalıştırır; sonuç
    beklenenle uyuşmuyorsa önce dosyayı gerçek duruma göre düzeltir, "Son doğrulama"yı günceller.
-6. Boş kalan bölümü silmeyin; "Yok" yazın. Böylece okuyan bölümün unutulmadığını anlar.
+6. Dosyayı kısa tutun (yaklaşık 100 satır). Uzuyorsa ya özellik ikiye bölünür ya da ayrıntı
+   ilgili ASKED / NOTES kaydına taşınıp buradan link verilir.
+7. Boş kalan bölümü silmeyin; "Yok" yazın. Böylece okuyan bölümün unutulmadığını anlar.
 Bu yorum bloğunu kopyaladığınız dosyada silebilirsiniz.
 -->
 
@@ -37,7 +39,7 @@ Bu yorum bloğunu kopyaladığınız dosyada silebilirsiniz.
 ---
 
 ## 3. Ayarlar ve Ortam Değişkenleri
-*Bu özelliği etkileyen `config.yaml` anahtarları ve ENV adları, her birinin ne işe yaradığı. Gerçek değerler buraya değil `config.yaml` / `.env`'e yazılır.*
+*Bu özelliği etkileyen `config.yaml` anahtarlarının ve ENV adlarının yalnızca adları ve bu özellikteki etkisi. Varsayılan değerler ve açıklamaların tek kaynağı `config.example.yaml` / `.env.example`'dır; burada tekrar yazılmaz, böylece iki yerde farklılaşmaz.*
 
 ---
 
@@ -52,7 +54,7 @@ Bu yorum bloğunu kopyaladığınız dosyada silebilirsiniz.
 ---
 
 ## 6. İlgili Dosyalar
-*Özelliğin kodunun, testlerinin ve ayar dosyalarının yolları; her birinin bu özellikteki rolü tek satırla. Özellik depo dışındaki dosyalara da dokunuyorsa (`/etc/...`, `~/.config/...`, servis birimleri) onlar da ayrı bir "Depo dışı" alt listesinde yazılır: bu dosyalardan biri değişince bu belge de güncellenir.*
+*Özelliğin kodunun, testlerinin ve ayar dosyalarının yolları; her birinin bu özellikteki rolü tek satırla. Özellik depo dışındaki dosyalara da dokunuyorsa (`/etc/...`, `~/.config/...`, servis birimleri) onlar da ayrı bir "Depo dışı" alt listesinde yazılır: bu dosyalardan biri değişince bu belge de güncellenir. Repoya girmeyen artefaktlar (veri seti, model ağırlığı, büyük medya) da "Repoda yok" alt listesinde yazılır: nerede durduğu, kimde olduğu, boyutu / adedi ve ne kadar güncel olduğu.*
 
 ---
 

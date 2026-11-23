@@ -13,6 +13,11 @@
 
 ---
 
+## 2026-11-23 | v2.2.1 | Özellik şablonuna proje deneyimlerinden iyileştirmeler
+
+- **docs/features/_SABLON.md :** "Son doğrulama" satırı artık tarihle birlikte o andaki commit'i de içerir. Ayarlar bölümü yalnızca anahtar / ENV adlarını listeler; varsayılan değerlerin tek kaynağı `config.example.yaml` olarak kalır. "İlgili Dosyalar" bölümüne repoya girmeyen artefaktlar (veri seti, model ağırlığı) için nerede, kimde, ne kadar güncel bilgisi eklendi. Dosyanın yaklaşık 100 satırı geçmemesi önerilir.
+- **docs/features/README.md :** Veri / makine öğrenmesi projelerinde hattın aşamaları (veri, eğitim, demo) da özellik sayılır.
+
 ## 2026-11-23 | v2.2.0 | Özellik belgeleri ve otomatik test
 
 - **docs/features/ — özellik belgeleri :** Yeni, isteğe bağlı klasör. Her özelliğin bugünkü hâli (nasıl çalışır, ayarlar / ENV, sınırlar ve tuzaklar, nasıl test edilir, ilgili dosyalar) tek bir `docs/features/<ozellik>.md` dosyasında durur. Dosyalar `_SABLON.md`'den açılır ve `docs/features/README.md` dizininde birer satırla listelenir. Ajan yalnızca üzerinde çalıştığı özelliğin dosyasını okur. Proje 4 veya daha fazla özelliğe ulaşınca ya da bir özelliğin bilgisi 3 veya daha fazla belgeye dağılınca kullanılır.
