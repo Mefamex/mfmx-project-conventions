@@ -65,6 +65,7 @@
 - [ ] **Standart Makefile:** 6 zorunlu yaşam döngüsü hedefi (`install`, `reinstall`, `update`, `run`, `clean`, `remove`) tanımlı ve tek başına `make` yazıldığında yardım menüsü dökülüyor.
 - [ ] **Git & README Standartları:** [`GIT_STANDARDS.md`](./GIT_STANDARDS.md) (Conventional Commits, atomik commit) ve [`README.STANDARDS.md`](./README.STANDARDS.md) (meta tablosu, başlık sırası) kurallarına eksiksiz uyuldu.
 - [ ] **Yapı Haritası (`docs/STRUCTURE.md`):** Klasör eklendiyse, silindiyse veya adı değiştiyse [`docs/STRUCTURE.md`](../STRUCTURE.md) aynı commit'te güncellendi; README'deki Proje Yapısı (Ana Dizin) bölümü kökteki değişikliği yansıtıyor.
+- [ ] **Özellik Belgeleri (`docs/features/`, kullanılıyorsa):** Davranışı, ayarı, sınırı veya test yolu değişen her özelliğin dosyası aynı commit'te güncellendi; eklenen, adı değişen veya kaldırılan özellik [`docs/features/README.md`](../features/README.md) dizinine işlendi. `*.local.md` gizli kısımları commit'lenmedi ve içerikleri dışarı taşınmadı.
 - [ ] **Dokümantasyon Güncelliği:** Eklenen yeni parametreler, API rotaları veya ortam değişkenleri [`README.md`](../../README.md) içine yansıtıldı; kullanıcıyı etkileyen değişiklikler [`CHANGELOG.md`](../../CHANGELOG.md) dosyasının en üstüne özetlendi.
 
 ---

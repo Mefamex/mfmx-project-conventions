@@ -4,7 +4,8 @@
 #
 # NE YAPAR: Bu reponun şablonlarının ve kurallarının birbiriyle tutarlı ve
 #           çalışır olduğunu doğrular: linkler, Makefile, make install, git
-#           hook'ları, şablon notu, geçmişte gizli dosya ve etiket türü.
+#           hook'ları, özellik dizini, şablon notu, geçmişte gizli dosya ve
+#           etiket türü.
 # KULLANIM: bash scripts/check.sh      (çıkış kodu 0 = tüm testler geçti)
 #           GitHub Actions her PR'da ve main'e her push'ta çalıştırır.
 # GÜVENLİ : Repoyu değiştirmez; testleri geçici bir klasördeki kopyalarda yapar
@@ -80,11 +81,13 @@ T="$TMP/hook"; mkdir -p "$T"
   cp -r "$REPO/docs" . && git add . && { C a && echo P1 || echo F1; }
   echo x > docs/NOTES.local.md; git add -f docs/NOTES.local.md; { C b && echo F2 || echo P2; }; git reset -q
   # Sahte secret çalışma anında birleştirilir; bu dosyanın kendisi hook'a takılmasın diye düz metin tutulmaz.
-  printf '%s = "%s"\n' "API_""KEY" "sk_live_""abcdefghijklmnop1234" > a.py; git add a.py; { C c && echo F3 || echo P3; }
+  printf '%s = "%s"\n' "API_""KEY" "sk_live_""abcdefghijklmnop1234" > a.py; git add a.py; { C c && echo F3 || echo P3; }; git reset -q; rm -f a.py
+  echo x > docs/features/ornek.local.md; git add -f docs/features/ornek.local.md; { C d && echo F4 || echo P4; }
 ) > "$TMP/hook.out" 2>&1
 if grep -q P1 "$TMP/hook.out"; then ok "repo belgeleri commit'lenebiliyor"; else ko "repo belgeleri hook'a takıldı"; fi
 if grep -q P2 "$TMP/hook.out"; then ok "git add -f ile docs/NOTES.local.md engellendi"; else ko "docs/NOTES.local.md engellenmedi"; fi
 if grep -q P3 "$TMP/hook.out"; then ok "secret engellendi"; else ko "secret engellenmedi"; fi
+if grep -q P4 "$TMP/hook.out"; then ok "git add -f ile docs/features/*.local.md engellendi"; else ko "docs/features/*.local.md engellenmedi"; fi
 
 echo "== 5. Pre-push hook (PRE_PUSH_CHECKLIST.md içindeki betik)"
 P="$TMP/pre-push"
@@ -93,9 +96,29 @@ Z=0000000000000000000000000000000000000000
 if ( cd "$TMP" && echo "refs/heads/f a refs/heads/main $Z" | bash "$P" >/dev/null 2>&1 ); then ok "solo main push serbest"; else ko "solo main push engellendi"; fi
 if ( cd "$TMP" && echo "refs/heads/f a refs/heads/main $Z" | PROTECTED_BRANCHES=main bash "$P" >/dev/null 2>&1 ); then ko "korumalı dala push geçti"; else ok "korumalı dala push engellendi"; fi
 
-echo "== 6. Şablon notu, geçmiş, etiketler"
+echo "== 6. Özellik dizini (docs/features/README.md)"
+# Her özellik dosyası (README, _SABLON ve *.local.md hariç) dizin tablosunda linkli bir satıra sahip olmalı.
+features_unlisted(){
+    local d="$1" f n out=""
+    [ -f "$d/README.md" ] || { echo "README.md-yok"; return; }
+    for f in "$d"/*.md; do
+        n="$(basename "$f")"
+        case "$n" in README.md|_SABLON.md|*.local.md) continue;; esac
+        grep -qE "^\|[^|]*\]\(\./$n\)" "$d/README.md" || out="$out $n"
+    done
+    printf '%s' "$out"
+}
+u="$(features_unlisted docs/features)"
+if [ -z "$u" ]; then ok "her özellik dosyası dizinde"; else ko "dizinde olmayan özellik dosyası:$u"; fi
+T="$TMP/features"; mkdir -p "$T"; cp docs/features/README.md "$T"/; echo "# x" > "$T/dizinsiz-ozellik.md"
+if [ -n "$(features_unlisted "$T")" ]; then ok "dizin denetimi eksik satırı yakalıyor"; else ko "dizin denetimi eksik satırı yakalamadı"; fi
+echo '| [Dizinsiz](./dizinsiz-ozellik.md) | Deneme | Aktif | Yok |' >> "$T/README.md"
+if [ -z "$(features_unlisted "$T")" ]; then ok "dizine eklenen özellik dosyası kabul ediliyor"; else ko "dizindeki özellik dosyası reddedildi"; fi
+if git check-ignore -q docs/features/ornek.local.md && ! git check-ignore -q docs/features/ornek.md; then ok ".gitignore: özellik .local.md gizli, .md izlenir"; else ko ".gitignore özellik dosyalarını yanlış ele alıyor"; fi
+
+echo "== 7. Şablon notu, geçmiş, etiketler"
 miss=""
-for f in CHANGELOG.md config.example.yaml .env.example .gitignore Makefile docs/*.md docs/ASKED/_SABLON.md docs/standards/*.md; do
+for f in CHANGELOG.md config.example.yaml .env.example .gitignore Makefile docs/*.md docs/ASKED/_SABLON.md docs/features/README.md docs/features/_SABLON.md docs/standards/*.md; do
     grep -q 'Şablon: https' "$f" || miss="$miss $f"
 done
 if [ -z "$miss" ]; then ok "şablon notu tüm şablonlarda"; else ko "şablon notu eksik:$miss"; fi

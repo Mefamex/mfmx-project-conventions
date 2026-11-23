@@ -15,6 +15,9 @@
 
 ## Yayınlanmamış
 
+- **docs/features/ — özellik belgeleri :** Yeni, isteğe bağlı klasör. Her özelliğin bugünkü hâli (nasıl çalışır, ayarlar / ENV, sınırlar ve tuzaklar, nasıl test edilir, ilgili dosyalar) tek bir `docs/features/<ozellik>.md` dosyasında durur. Dosyalar `_SABLON.md`'den açılır ve `docs/features/README.md` dizininde birer satırla listelenir. Ajan yalnızca üzerinde çalıştığı özelliğin dosyasını okur. Proje 4 veya daha fazla özelliğe ulaşınca ya da bir özelliğin bilgisi 3 veya daha fazla belgeye dağılınca kullanılır.
+- **Sınırlar :** Tarihçe `docs/TODO.DONE.md`'de (yeni isteğe bağlı `Özellik:` satırıyla), kararlar `docs/ASKED/`'de, açık işler `docs/TODO.md`'de kalır; özellik dosyası bunlara yalnızca link verir. `docs/NOTES.md` birden çok özelliği kesen bilgiyi tutar. Özelliğin davranışını değiştiren commit, dosyasını da aynı commit'te günceller; kontrol listelerine bu madde eklendi.
+- **Özelliğe özgü gizli notlar :** Gerekirse `docs/features/<ozellik>.local.md` açılır; `docs/NOTES.local.md` ile aynı kurallar ve aynı `.gitignore` / pre-commit korumasıyla repoya girmez. Dizindeki "Gizli" sütunu bu dosyanın varlığını gösterir, çünkü arama araçları onu bulamaz.
 - **Otomatik test (CI) :** Repoya `scripts/check.sh` bütünlük testi ve onu her PR'da ve `main`'e her push'ta çalıştıran GitHub Actions iş akışı (`.github/workflows/check.yml`) eklendi. Test; kırık linkleri, `make install` davranışını, pre-commit / pre-push hook'larını, şablon notunu, geçmişte gizli dosya olup olmadığını ve etiketlerin annotated olduğunu denetler. Bu araçlar reponun kendisi içindir, şablon olarak kopyalanmaz.
 
 ## 2026-11-22 | v2.1.0 | Gizli notlar, PR akışı ve düzeltmeler

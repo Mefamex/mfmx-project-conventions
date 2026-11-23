@@ -21,6 +21,7 @@
 - **Kararı geliştirici verdiyse** (bir soruya cevap, onaylanan Kendi Kararım): kayıt `docs/ASKED/<konu>.md` dosyasına gider, buraya kopyalanmaz.
 - **Bilgiyi sistem öğrettiyse** (ölçülen sınır, elenen yol, platform tuzağı): buraya yazılır.
 - **Bilgi gizli kalmalıysa** (kişi / müşteri adı, iç adres, makineye özel yol, gizli bağlam): repoya girmeyen `docs/NOTES.local.md`'ye yazılır. Oradan genel bir ders çıkarsa kişisel ayrıntı ayıklanıp buraya taşınır.
+- **Bilgi tek bir özelliğe aitse** ve proje `docs/features/` kullanıyorsa: o özelliğin bugünkü hâli, ayarları, sınırları ve tuzakları `docs/features/<ozellik>.md`'ye yazılır; buraya yalnızca birden çok özelliği kesen bilgi (platform tuzakları, genel dersler, mimari tercihler) kalır.
 - Birden fazlası aynı konuya değiyorsa kopyalamak yerine birbirine link verilir; kopyalar zamanla birbirinden kopar. `NOTES.local.md`'ye link verilebilir, ama içeriği izlenen dosyalara kopyalanmaz.
 
 ---
