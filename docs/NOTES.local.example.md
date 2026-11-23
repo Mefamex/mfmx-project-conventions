@@ -1,7 +1,7 @@
 # NOTES.local — Gizli / Yerel Notlar
 
 > **Bu dosya nedir:** Repoya girmemesi gereken, projeye ya da bu makineye özel notlar. Bu dosya **şablondur** ve repoda izlenir; gerçek notlar `docs/NOTES.local.md` kopyasına yazılır. `make install` dosya yoksa bu şablondan oluşturur, `.gitignore` ve pre-commit hook onu commit'ten korur.  
-> **Girer:** Yerel yollar, iç ağ adresleri ve makine adları, kişi / müşteri / paydaş adları, gizli bağlam ve kararlar, bir secret'ın **nerede durduğu** ("API token parola yöneticisinde, `proje-x` kaydında").  
+> **Girer:** Yerel yollar, iç ağ adresleri ve makine adları, kişi / müşteri / paydaş adları, gizli bağlam ve kararlar, bir secret'ın **nerede durduğu** ("API token parola yöneticisinde, `proje-x` kaydında"). Yalnızca tek bir özelliğe ait gizli maddeler, proje `docs/features/` kullanıyorsa `docs/features/<ozellik>.local.md`'ye yazılır.  
 > **Girmez:** Secret'ın **kendisi** (şifre, token, anahtar, kart / IBAN). Bu dosya şifreli değildir; diskte, yedeklerde ve senkron klasörlerinde düz metin durur. Secret'lar `.env` veya parola yöneticisinde tutulur. AI ajanından da gizli kalması gereken bilgi de buraya yazılmaz; ajan bu dosyayı okur.
 
 > **Ajan ve Geliştirici Kuralları:**  

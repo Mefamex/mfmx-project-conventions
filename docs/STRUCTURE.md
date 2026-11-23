@@ -24,6 +24,7 @@
 - scripts/               # Bu reponun kendi araçları (şablon değildir, kopyalanmaz)
 - docs/                  # Tüm çalışma belgeleri: görevler, sorular, kararlar, notlar, yapı haritası
     - ASKED/             # Cevaplanmış soruların konu bazlı kalıcı karar kayıtları
+    - features/          # (İsteğe bağlı) Özellik başına bugünkü hâl belgeleri ve dizini
     - standards/         # NASIL ÇALIŞILIR: kural belgeleri ve kontrol listeleri
 ```
 
@@ -44,7 +45,7 @@
     - workflows/
         - check.yml                # CI: PR ve main push'ta bütünlük testini çalıştırır
 - scripts/
-    - check.sh                     # Bütünlük testi: linkler, make install, hook'lar, şablon notu, etiketler
+    - check.sh                     # Bütünlük testi: linkler, make install, hook'lar, özellik dizini, şablon notu, etiketler
 - docs/
     - TODO.md                      # Giriş kapısı: Bağlam Çapası + Hızlı Giriş + aktif sprint
     - ASK.md                       # Açık sorular, onay bekleyen kararlar, sonda karar kapısı
@@ -56,6 +57,11 @@
     - ASKED/
         - _SABLON.md               # Konu dosyası şablonu
         - <konu-adi>.md            # Her mikro konu: üstte geçerli karar, altta geçmiş
+    - features/
+        - README.md                # Kurallar ve özellik dizini (özellik, tek cümle, durum, gizli)
+        - _SABLON.md               # Özellik dosyası şablonu
+        - <ozellik-adi>.md         # Bir özelliğin bugünkü hâli: nasıl çalışır, ayarlar, tuzaklar, test
+        - <ozellik-adi>.local.md   # (repoda yok) Yalnız gerekiyorsa: özelliğe özgü gizli maddeler
     - standards/
         - GIT_STANDARDS.md         # Commit formatı ve tipleri, sürümleme, push izne tabi
         - PRE_COMMIT_CHECKLIST.md  # Commit öncesi kontrol listesi + örnek hook

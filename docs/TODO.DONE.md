@@ -15,5 +15,6 @@
 - **Değişiklikler:** [Ne değişti: dokunulan dosyaların yolları ve her birinde yapılan iş, kısa ve somut]
 - **Kök Neden / Problem:** [Bu iş neden yapıldı: çözülen hata, karşılanan ihtiyaç veya giderilen eksik]
 - **Doğrulama Kanıtı:** [Çalıştırılan komut → sonucu (geçen test sayısı, exit code); canlı denendiyse ne gözlendiği]
+- **Özellik:** [Proje `docs/features/` kullanıyorsa ilgili özellik dosyasının adı (`gorsel-hatti`); kullanmıyorsa bu satırı silin]
 
 *Yeni kayıt bu kaydın üstüne, aynı biçimde eklenir.*

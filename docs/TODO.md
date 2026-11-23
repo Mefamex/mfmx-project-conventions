@@ -11,7 +11,7 @@
 
 - **Sıralı İlerleme:** Aktif sprint listesini yukarıdan aşağıya takip et; kapsama girmeyen yan işlere dallanma.
 - **Tahmin Yasak:** Varsayımla koda girme; açık kararları `ASK.md` veya `NOTES.md`'ye yönlendir.
-- **Gizli Notlar:** `docs/NOTES.local.md` varsa oturum başında tam yoluyla oku (arama araçları onu göstermez). İçeriğini izlenen dosyalara, commit / PR metnine veya CHANGELOG'a asla taşıma.
+- **Gizli Notlar:** `docs/NOTES.local.md` varsa oturum başında tam yoluyla oku (arama araçları onu göstermez). Bir özellik üzerinde çalışırken o özelliğin `docs/features/<ozellik>.local.md` dosyası varsa onu da tam yoluyla oku. İçeriğini izlenen dosyalara, commit / PR metnine veya CHANGELOG'a asla taşıma.
 - **Kırmızı Çizgiler:** `sudo`, veri silme (`rm`), kontrolsüz refaktör veya `git push` izinsiz çalıştırılamaz. Silme için onaylı yol `Makefile`'daki `clean` / `remove` hedefleridir.
 - **Arşivleme Kuralı:** Biten madde `TODO.md`'den çıkarılır; zaman damgası ve test kanıtıyla [`docs/TODO.DONE.md`](./TODO.DONE.md)'nin en üstüne eklenir.
 - **Doğrulama Şartı:** `build`, `test`, `lint` veya canlı çalışma kanıtı (exit code 0) sunulmadan görev tamamlanamaz.
@@ -23,7 +23,7 @@
      - Önem Yüksek + Aciliyet Orta/Düşük → Yüksek Öncelik
      - İkisi de Orta → Backlog
      - Biri Düşük, diğeri en fazla Orta → Gelecek Yol Haritası (gereksiz görünüyorsa geliştiriciye sorup İptal)
-     - Görev değilse doğru dosyaya: karar sorusu → `ASK.md`, öğrenilen kısıt / not → `NOTES.md`, gizli kalması gereken not → `docs/NOTES.local.md`
+     - Görev değilse doğru dosyaya: karar sorusu → `ASK.md`, öğrenilen kısıt / not → `NOTES.md` (tek bir özelliğe aitse ve proje kullanıyorsa `docs/features/<ozellik>.md`), gizli kalması gereken not → `docs/NOTES.local.md` (tek bir özelliğe aitse `docs/features/<ozellik>.local.md`)
   3. Taşınan maddeyi buradan sil. Bu bölüm normalde **boş** durur.
 
 ---

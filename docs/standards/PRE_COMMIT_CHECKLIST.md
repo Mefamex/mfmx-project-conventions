@@ -13,7 +13,7 @@
 
 - [ ] **Hardcoded Gizli Değer Yok:** Kaynak kodda, test mock'larında veya yorum satırlarında API key, token, şifre veya özel anahtar (private key) bulunmuyor.
 - [ ] **İstemci Tarafı Env Tuzakları:** Frontend projelerinde `NEXT_PUBLIC_`, `VITE_`, `REACT_APP_` gibi istemciye açık öneklerde hassas backend anahtarları yer almıyor.
-- [ ] **Yerel / Gizli Dosya Sahnede Yok:** `docs/NOTES.local.md`, `.env.local`, `CLAUDE.local.md` gibi `*.local` / `*.local.*` dosyalar `git add -f` ile bile sahneye alınmadı. (Şablonlar `*.example.*` serbesttir.)
+- [ ] **Yerel / Gizli Dosya Sahnede Yok:** `docs/NOTES.local.md`, `docs/features/<ozellik>.local.md`, `.env.local`, `CLAUDE.local.md` gibi `*.local` / `*.local.*` dosyalar `git add -f` ile bile sahneye alınmadı. (Şablonlar `*.example.*` serbesttir.)
 - [ ] **Gerçek Yapılandırma Dosyaları İhmal Edildi:** `.env`, `.env.local`, `service-account.json`, `*.pem`, `*.key` dosyaları `.gitignore` içinde yer alıyor. Depoya yalnızca `.env.example` gibi sahte şablonlar ekleniyor.
 - [ ] **Büyük ve İkili Dosya Engeli:** Depoya yanlışlıkla eklenmiş veri seti (`.csv`, `.sqlite`), model ağırlığı (`.bin`, `.onnx`), arşiv (`.zip`) veya derleme çıktısı (`dist/`, `build/`) yok.
 
@@ -33,6 +33,7 @@
 *AI kodlama ajanlarının en sık düştüğü kritik hataları filtreler:*
 
 - [ ] **Sahte Yeşil Test Hilesi Yok:** Ajan, testleri yeşile çevirmek için başarısız olan bir birim testini **silmedi, yorum satırına almadı veya `@pytest.mark.skip` / `test.skip()` ile devre dışı bırakmadı**.
+- [ ] **Özellik Dosyası Güncel:** Proje `docs/features/` kullanıyorsa, davranışı değişen özelliğin dosyası bu commit'e dahil edildi.
 - [ ] **Değişiklik İzahı Net:** Yapılan değişiklik ve mimari etki tek veya iki net cümleyle gerekçelendirilebiliyor.
 - [ ] **Yetki ve Çoklu Kiracılık (Multi-Tenancy) Korundu:** Yeni veya değişen API uçlarında yetkilendirme kontrolü atlanmadı; veri sorguları çağıran kullanıcının veya organizasyonun yetki sınırına kilitlendi.
 - [ ] **Var Olan Kodlama Kalıpları Bozulmadı:** Projede kurulu olan mimari desen terk edilip ajan tarafından yeni bir yöntem icat edilmedi.

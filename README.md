@@ -15,7 +15,7 @@ Hem geliştiriciler hem de AI kodlama ajanları (Claude Code, OpenCode, Antigrav
 Temel ilke: **"Hafızayı sohbete değil, diske sabitle."** Dosyaları olduğu gibi kopyalayabilir ya da kendi projenizde eksik olanı bu rehbere bakarak tamamlayabilirsiniz.  
 Bu README de [`docs/standards/README.STANDARDS.md`](./docs/standards/README.STANDARDS.md) kurallarına göre yazılmıştır; kendi README'nizi hazırlarken örnek olarak kullanabilirsiniz.
 
-> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md) (Bağlam Çapası, Hızlı Giriş, aktif sprint), sonra [`docs/ASK.md`](./docs/ASK.md) (açık sorular ve Karara Bağlananlar kapısı), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Varsa gizli notlar için [`docs/NOTES.local.md`](./docs/NOTES.local.example.md) de tam yoluyla okunur (repoya girmez, arama araçları göstermez; içeriği dışarı taşınmaz). Kurallar [`docs/standards/`](./docs/standards/) altındadır.
+> **Çalışmaya başlarken (geliştirici ve AI ajanı):** Tüm çalışma belgeleri `docs/` altındadır. Her oturumda önce [`docs/TODO.md`](./docs/TODO.md) (Bağlam Çapası, Hızlı Giriş, aktif sprint), sonra [`docs/ASK.md`](./docs/ASK.md) (açık sorular ve Karara Bağlananlar kapısı), sonra [`docs/NOTES.md`](./docs/NOTES.md) okunur. Bir özellik üzerinde çalışılacaksa [`docs/features/README.md`](./docs/features/README.md) dizininden yalnızca o özelliğin dosyası açılır. Varsa gizli notlar için [`docs/NOTES.local.md`](./docs/NOTES.local.example.md) ve özelliğin `.local.md` dosyası da tam yoluyla okunur (repoya girmez, arama araçları göstermez; içeriği dışarı taşınmaz). Kurallar [`docs/standards/`](./docs/standards/) altındadır.
 
 ---
 
@@ -26,6 +26,7 @@ Dosyaların bir iş döngüsü içinde birbirine bağlanışı (iş bitince sır
 ```text
 [ docs/TODO.md ] ──> [ Kodlama ] ──┬──> Belirsizlik ──> [ docs/ASK.md ] ──cevap──> [ docs/ASKED/<konu>.md ]
                                    ├──> Öğrenilen kısıt / elenen yol ──> [ docs/NOTES.md ]
+                                   ├──> Özelliğin bugünkü hâli ──> [ docs/features/<ozellik>.md ]
                                    ├──> Gizli bağlam ──> [ docs/NOTES.local.md ] (repoda yok)
                                    └──> [ make verify ] ──> [ docs/TODO.DONE.md ] ──> commit ──> onay ──> push
 ```
@@ -37,6 +38,7 @@ Dosyaların bir iş döngüsü içinde birbirine bağlanışı (iş bitince sır
 * **Bağlam kaybını önler (context drift):** Projenin amacı `docs/TODO.md` başındaki Bağlam Çapası'nda, kararların gerekçesi `docs/NOTES.md`'de durur; oturum sıfırlansa da kimse sıfırdan başlamaz.
 * **Tahminle kodlamayı engeller:** Kritik ikilemler `docs/ASK.md`'ye seçenekleriyle yazılır; otonom alınan kararlar "Kendi Kararım" tablosuyla onaylanana kadar denetlenebilir kalır.
 * **Verilen kararı unutturmaz:** Cevaplanan sorular `docs/ASKED/<konu>.md` dosyalarında silinmeden tutulur; `docs/ASK.md` sonundaki kapı listesi her oturumda okunduğu için karar gözden kaçmaz, değişen karar "Geçersiz" olarak işaretlenir.
+* **Özelliği tek dosyada anlatır:** İsteğe bağlı `docs/features/` klasöründe her özelliğin bugünkü hâli (nasıl çalışır, ayarlar, tuzaklar, nasıl test edilir) tek dosyadadır; ajan yalnızca üzerinde çalıştığı özelliğin dosyasını okur.
 * **Doğrulanmamış iddiayı kapatır:** `docs/TODO.DONE.md`'ye çalıştırılan komut ve exit code yazılmadan iş bitmiş sayılmaz.
 * **Sızıntıyı erken yakalar:** Commit öncesi hook yalnızca eklenen satırları tarar, gitleaks kuruluysa onu kullanır.
 * **Her yığında aynı komutlar:** `make install`, `make run`, `make verify` her projede aynı anlamı taşır.
@@ -73,6 +75,10 @@ cp mfmx-project-conventions/docs/{TODO.md,ASK.md,NOTES.md,NOTES.local.example.md
 cp mfmx-project-conventions/docs/ASKED/_SABLON.md ./projem/docs/ASKED/
 cp -r mfmx-project-conventions/docs/standards ./projem/docs/
 
+# 3b. (İsteğe bağlı) Proje 4 veya daha fazla özelliğe ulaşınca özellik belgeleri klasörü
+mkdir -p ./projem/docs/features
+cp mfmx-project-conventions/docs/features/{README.md,_SABLON.md} ./projem/docs/features/
+
 # 4. Makefile'ı yığınınıza göre doldurun; make install, config.yaml, .env ve docs/NOTES.local.md yoksa şablondan oluşturur
 cd projem && make && make install
 ```
@@ -81,7 +87,7 @@ Sonra:
 
 1. `docs/TODO.md` başındaki Bağlam ve Amaç kısmını doldurun, görevleri sıralayın. `docs/STRUCTURE.md`'yi projenizin klasörlerine göre yazın.
 2. `Makefile` içindeki `# [...]` satırlarını gerçek komutlarla değiştirin (dosyanın başındaki notlara bakın).
-3. Mimari bir ikilemde `docs/ASK.md`'ye seçenekleriyle yazın. Cevaplanan soruyu `docs/ASK.md` başındaki 6 adımla `docs/ASKED/<konu>.md` dosyasına işleyin. Sistemin öğrettiği kısıt ve elenen yolları `docs/NOTES.md`'ye kaydedin.
+3. Mimari bir ikilemde `docs/ASK.md`'ye seçenekleriyle yazın. Cevaplanan soruyu `docs/ASK.md` başındaki 6 adımla `docs/ASKED/<konu>.md` dosyasına işleyin. Sistemin öğrettiği kısıt ve elenen yolları `docs/NOTES.md`'ye kaydedin. `docs/features/` kullanıyorsanız bir özelliğin davranışını değiştiren her commit'te o özelliğin dosyasını da güncelleyin.
 4. Biten görevi `docs/TODO.DONE.md`'nin en üstüne zaman damgası ve test çıktısıyla taşıyın; kullanıcıyı etkileyen sonucu `CHANGELOG.md`'ye özetleyin.
 5. `docs/standards/GIT_STANDARDS.md` kurallarıyla atomik commit atın; onay olmadan push etmeyin.
 
@@ -90,7 +96,7 @@ Sonra:
 Kullandığınız AI ajanına şu komutu verebilirsiniz:
 
 ```text
-https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: CHANGELOG.md, config.example.yaml, .env.example, Makefile, .gitignore; docs/ altında: TODO.md, ASK.md, NOTES.md, NOTES.local.example.md, STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. docs/standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
+https://github.com/Mefamex/mfmx-project-conventions reposundaki tüm dosyaları ve kuralları incele. Mevcut projemi analiz et; şablon dosyalarını (kökte: CHANGELOG.md, config.example.yaml, .env.example, Makefile, .gitignore; docs/ altında: TODO.md, ASK.md, NOTES.md, NOTES.local.example.md, STRUCTURE.md, TODO.DONE.md, ASKED/_SABLON.md; proje 4 veya daha fazla özellik içeriyorsa features/README.md ve features/_SABLON.md) projemin yığınına ve bağlamına göre uyarlayarak oluştur. docs/standards/ klasöründeki kural belgelerini (GIT_STANDARDS.md, PRE_COMMIT_CHECKLIST.md, PRE_PUSH_CHECKLIST.md, README.STANDARDS.md) referans al. Önce eksik dosyaların listesini göster, onayımı al; bitince `make` ve `make verify` çıktısını göster. Bundan sonraki tüm adımlarda bu kurallara bağlı kal.
 ```
 
 ---
@@ -132,7 +138,7 @@ bash scripts/check.sh
 2. **Push izne tabi:** Lokal commit serbesttir; `git push` yalnızca açık kullanıcı onayıyla çalışır. `--force` yasaktır.
 3. **Kanıt şartı:** `build`, `test` veya `lint` çıktısı (exit code 0) olmadan iş bitti sayılmaz. Boş şablon Makefile'ın `make verify` çıktısı kanıt değildir.
 4. **Sıfır kalıntı:** İş bitiminde geçici dosyalar, process'ler ve log artıkları temizlenir (`make clean`).
-5. **Sıfır sızıntı:** Secret ve kişisel veri (telefon, IP, SSID, şifre, token) çalışma dosyalarına da git geçmişine de girmez. Gizli bağlam repoya girmeyen `docs/NOTES.local.md`'ye yazılır; içeriği izlenen dosyalara, commit / PR metnine veya CHANGELOG'a taşınmaz.
+5. **Sıfır sızıntı:** Secret ve kişisel veri (telefon, IP, SSID, şifre, token) çalışma dosyalarına da git geçmişine de girmez. Gizli bağlam repoya girmeyen `docs/NOTES.local.md`'ye, özelliğe özgü gizli maddeler `docs/features/<ozellik>.local.md`'ye yazılır; içeriği izlenen dosyalara, commit / PR metnine veya CHANGELOG'a taşınmaz.
 
 ---
 
@@ -158,6 +164,7 @@ Ana dizindeki dosya ve klasörler. Tüm klasörlerin ve önemli dosyaların hari
     - [`STRUCTURE.md`](./docs/STRUCTURE.md) — Tüm klasörlerin ve önemli dosyaların haritası.
     - [`TODO.DONE.md`](./docs/TODO.DONE.md) — Yapılan işlerin kanıtlı haritası (en yeni en üstte).
     - [`ASKED/`](./docs/ASKED/) — Cevaplanmış soruların konu bazlı kalıcı karar kayıtları; şablon: [`_SABLON.md`](./docs/ASKED/_SABLON.md).
+    - [`features/`](./docs/features/) — (İsteğe bağlı) Özellik başına bugünkü hâl belgeleri; dizin: [`README.md`](./docs/features/README.md), şablon: [`_SABLON.md`](./docs/features/_SABLON.md).
     - [`standards/`](./docs/standards/) — Nasıl çalışılır: Git standartları, commit / push kontrol listeleri, README standardı.
 
 ---
