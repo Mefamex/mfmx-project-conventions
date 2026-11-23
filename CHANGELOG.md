@@ -13,7 +13,7 @@
 
 ---
 
-## Yayınlanmamış
+## 2026-11-23 | v2.2.0 | Özellik belgeleri ve otomatik test
 
 - **docs/features/ — özellik belgeleri :** Yeni, isteğe bağlı klasör. Her özelliğin bugünkü hâli (nasıl çalışır, ayarlar / ENV, sınırlar ve tuzaklar, nasıl test edilir, ilgili dosyalar) tek bir `docs/features/<ozellik>.md` dosyasında durur. Dosyalar `_SABLON.md`'den açılır ve `docs/features/README.md` dizininde birer satırla listelenir. Ajan yalnızca üzerinde çalıştığı özelliğin dosyasını okur. Proje 4 veya daha fazla özelliğe ulaşınca ya da bir özelliğin bilgisi 3 veya daha fazla belgeye dağılınca kullanılır.
 - **Sınırlar :** Tarihçe `docs/TODO.DONE.md`'de (yeni isteğe bağlı `Özellik:` satırıyla), kararlar `docs/ASKED/`'de, açık işler `docs/TODO.md`'de kalır; özellik dosyası bunlara yalnızca link verir. `docs/NOTES.md` birden çok özelliği kesen bilgiyi tutar. Özelliğin davranışını değiştiren commit, dosyasını da aynı commit'te günceller; kontrol listelerine bu madde eklendi.
