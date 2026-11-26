@@ -33,7 +33,10 @@
 ## 2. Dosya Yapısı
 
 ```text
-- README.md                        # Vitrin: ne olduğu, nasıl kurulur, nasıl kullanılır
+- README.md                        # Vitrin (İngilizce): ne olduğu, nasıl kurulur, nasıl kullanılır
+- README.tr.md                     # README'nin Türkçe sürümü; iki dosya birlikte güncellenir
+- assets/
+    - social-preview.png           # README görseli ve GitHub sosyal önizleme görseli (1280×640)
 - CHANGELOG.md                     # Okuyucuya yönelik değişiklik özeti (en yeni üstte)
 - config.example.yaml              # Yapılandırma şablonu; gerçek config.yaml bundan kopyalanır
 - config.yaml                      # (repoda yok) Gerçek ayarlar; make install oluşturur
